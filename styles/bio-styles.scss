@@ -1,0 +1,42 @@
+header {
+    background-image: url('../img/bio-header-bg.jpg');
+}
+
+#bio {
+    font-size: 24px;
+    line-height: 46px;
+}
+
+.bio-photo-gf {
+    height: 640px;
+    background-image: url('../img/bio-gabrielforion-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 60px 0;
+}
+
+.bio-flex-bottom {
+    display: flex;
+
+    .bio-bottom-txt {
+        flex: 1;
+        margin: 0 15px 0 0;
+    }
+    
+    .bio-reconnaissances {
+        flex: 1;
+        align-self: flex-start;
+        background-color: white;
+        padding: 30px;
+        margin: 0 0 30px 15px;
+
+        ul {
+            list-style: inside none;
+            // margin-left: -35px;
+
+            li {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
