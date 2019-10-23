@@ -1,0 +1,38 @@
+header {
+  background-image: url("../img/contact-header-bg.jpg");
+}
+
+.contact-social-g {
+  flex: 3;
+  align-self: flex-start;
+}
+
+.contact-social-g p {
+  margin: 0;
+}
+
+main p {
+  font-size: 24px;
+}
+
+.contact-rs {
+  margin-bottom: 60px;
+}
+
+.contact-social-d {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.contact-social-d img {
+  margin-left: 20px;
+}
+
+.contact-agence {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+}

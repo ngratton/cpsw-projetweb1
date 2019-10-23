@@ -7,16 +7,12 @@ export default class App {
 	 * Méthode principale. Sera typiquement appelée après le chargement de la page.
 	 */
 	static main() {
-		/* POUR TOUTES LES PAGES */
-		var url = window.location.pathname;
-		var indexUrl = url.includes("index");
 		
-		if (url === "/" || indexUrl === true) {
-			document.querySelector("#nav-logo").parentNode.removeChild(document.querySelector("#nav-logo"));
-		} else {
-			document.querySelector("#nav-logo").addEventListener("click", e => {
-				window.location.href = './';
-			});
+		/* PAGE OEUVRE */
+		var oeuvreDescH = document.querySelector(".oeuvre-desc").clientHeight;
+		var oeuvreArtDiv = document.querySelector(".oeuvre-art");
+		if (oeuvreArtDiv.clientHeight < oeuvreDescH) {
+			oeuvreArtDiv.style.height = oeuvreDescH + "px";
 		}
 	}
 

@@ -1,0 +1,87 @@
+/****************
+*
+*   VARIABLES
+*
+*****************/
+
+$couleur-dore: #946F2B;
+$couleur-turquoise: #7DBBC9;
+$couleur-gris-fonce: #262C2D;
+$couleur-gris-pale: #DCE2E8;
+
+$font-header: league-gothic, sans-serif;
+$font-body: minion-pro, serif;
+
+/***************************
+*
+*   COMPOSANTS UNIVERSELS
+*
+****************************/
+header {
+    position: relative;
+    height: 910px;
+    display: flex;
+
+    .head-nom {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: calc(50% + 80px);
+        padding-right: 80px;
+        z-index: 90;
+        background-color: rgba(255,255,255,0.75);
+
+        #accueil-logo {
+            margin-top: -47px;
+        }
+
+        #header-nom-gf {
+            font-family: league-gothic, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-transform: uppercase;
+            color: $couleur-turquoise;
+            font-size: 200px;
+            margin: 60px -40px 60px 0;
+            top: 200px;
+            z-index: 99;
+            line-height: 180px;
+        }
+        
+        .header-compositeur {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+    }
+
+    .head-photo {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 910px;
+        width: 50%;
+        z-index: 10;
+
+        .head-photo-gf {
+            height: 100%;
+            width: 100%;
+            background-image: url('../img/accueil-header-photo-bg.jpg');
+            background-position: left;
+            background-size: cover;
+        }
+    }
+}
+
+
+
+.accueil-infolettre {
+
+    .accueil-infolettre-form {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+
+    }
+}

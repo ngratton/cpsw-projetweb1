@@ -1,9 +1,18 @@
 @import url("https://use.typekit.net/vzq6ywf.css");
 /****************
-*
-*   VARIABLES
-*
-*****************/
+    *
+    *   VARIABLES
+    *
+    *****************/
+/***************************
+    *
+    *   COMPOSANTS UNIVERSELS
+    *
+    ****************************/
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   background-color: #DCE2E8;
@@ -15,11 +24,6 @@ html {
   color: #262C2D;
 }
 
-/***************************
-*
-*   COMPOSANTS UNIVERSELS
-*
-****************************/
 h1,
 h2,
 h3 {
@@ -38,7 +42,7 @@ h5 {
 }
 
 h1 {
-  font-size: 220px;
+  font-size: 200px;
   margin: 0;
   color: white;
   position: absolute;
@@ -145,9 +149,30 @@ nav .conteneur #nav-liens {
 }
 
 nav .conteneur a {
-  color: #262C2D;
-  transition: color .1s ease;
+  position: relative;
   font-size: 24px;
+  color: #262C2D;
+  transition: color .2s ease-out;
+  z-index: 99;
+}
+
+nav .conteneur a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 4px;
+  left: 0;
+  background-color: #7DBBC9;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all .2s ease-out;
+  z-index: -1;
+}
+
+nav .conteneur a:hover:after {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 nav .conteneur a:hover {
@@ -168,25 +193,7 @@ header .page-header {
 main a {
   position: relative;
   color: #946F2B;
-  transition: color .1s ease;
-}
-
-main a:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: #7DBBC9;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.1s ease;
-}
-
-main a:hover:before {
-  visibility: visible;
-  transform: scaleX(1);
+  transition: color .2s ease-out;
 }
 
 main a:hover {
@@ -194,7 +201,6 @@ main a:hover {
 }
 
 footer {
-  height: 180px;
   background-color: #262C2D;
   padding: 70px 102px;
   margin-top: 150px;
@@ -205,7 +211,7 @@ footer {
 
 footer a {
   color: #DCE2E8;
-  transition: color .1s ease;
+  transition: color .2s ease-out;
 }
 
 footer a:hover {
@@ -236,7 +242,7 @@ footer .social a {
 }
 
 footer .social a img {
-  transition: filter 0.1s ease;
+  transition: filter 0.2s ease-out;
 }
 
 footer .social a:hover img {
@@ -265,6 +271,31 @@ footer .logo-admin {
 *   COMPOSANTS
 *
 ******************/
+.carte {
+  background-color: white;
+  padding: 30px;
+  align-self: flex-start;
+}
+
+.carte p {
+  font-size: 18px;
+}
+
+.carte-large {
+  background-color: white;
+  align-self: flex-start;
+}
+
+.flex-gauche {
+  margin: 0 15px 30px 0;
+  flex: 1;
+}
+
+.flex-droite {
+  margin: 0 0 30px 15px;
+  flex: 1;
+}
+
 /******************
 *
 *   UTILITAIRES
@@ -274,8 +305,113 @@ footer .logo-admin {
   display: flex;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .small {
   font-size: 0.75em;
+}
+
+.flex-centre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marge-60 {
+  margin: 60px 0;
+}
+
+.btn {
+  height: 50px;
+  padding: 0 30px;
+  position: relative;
+  z-index: 10;
+  border: 0;
+  font-family: minion-pro, serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn a {
+  line-height: 50px;
+  z-index: 999;
+  color: white;
+}
+
+.btn a:hover {
+  color: white;
+}
+
+.btn a:hover:before {
+  visibility: hidden;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0%;
+  background-color: #262C2D;
+  visibility: hidden;
+  transform: scale(0);
+  transition: all 0.2s ease;
+  z-index: -1;
+}
+
+.btn:hover:before {
+  visibility: visible;
+  transform: scale(1);
+}
+
+.btn-dore {
+  background-color: #946F2B;
+  color: white;
+}
+
+.btn-turquoise {
+  background-color: #7DBBC9;
+}
+
+.btn-turquoise a {
+  color: black;
+  transition: color .2s ease-out;
+}
+
+.btn-turquoise:hover {
+  color: white;
+}
+
+input {
+  font-family: minion-pro, serif;
+  font-size: 16px;
+  border: 0;
+  outline: none;
+}
+
+input[type="text"] {
+  background-color: #DCE2E8;
+  border: 1px solid #DCE2E8;
+  color: #262C2D;
+  height: 50px;
+  padding: 0 10px;
+  margin-right: 20px;
+  flex: 2;
+  transition: border .2s ease;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #7DBBC9;
+}
+
+input[type="submit"] {
+  background-color: #946F2B;
+  color: white;
+  height: 50px;
+  flex: 1;
 }
 
 /********************

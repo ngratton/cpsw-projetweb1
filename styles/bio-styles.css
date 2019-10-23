@@ -27,8 +27,6 @@ header {
 .bio-flex-bottom .bio-reconnaissances {
   flex: 1;
   align-self: flex-start;
-  background-color: white;
-  padding: 30px;
   margin: 0 0 30px 15px;
 }
 
