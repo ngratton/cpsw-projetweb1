@@ -25,68 +25,154 @@
         </div>
     </nav>
     <header>
-        <div class="head-nom">
+        <div class="accueil-head-nom">
             <img src="./img/accueil-logo.png" id="accueil-logo" alt="Gabriel Forion">
-            <span id="header-nom-gf">GABRIEL<br>&nbsp;&nbsp;&nbsp;FORION</span>
-            <span class="header-compositeur">Compositeur</span>
+            <span id="accueil-header-nom">GABRIEL<br>&nbsp;&nbsp;&nbsp;FORION</span>
+            <span class="accueil-header-compositeur">Compositeur</span>
         </div>
-        <div class="head-photo">
-            <div class="head-photo-gf"></div>
+        <div class="accueil-head-photo">
+            <div class="accueil-head-photo-gf"></div>
         </div>
     </header>
 
     <main>
-        <section id="short-bio">
-           
-            <div class="accueil-infolettre carte">
-                <div class="conteneur">
-                    <h3>Infolettre</h3>
-                    <p class="flex-centre">
-                        Restez à l'affût des dernières nouvelles en vous abonanat à l'infolettre. Profitez entre autres de préventes exclusives sur les billets de spectacles.
-                    </p>
+        <section id="accueil-bio" class="conteneur">
+            <div class="accueil-bio-photo"></div>
+            <div class="accueil-bio-txt carte">
+                <img src="./img/accueil-bio-gamme.png">
+                <p>
+                        Compositeur, mélodiste et arrangeur de musique inspiré, GABRIEL FORION partage sa vie entre la chanson et la musique de film depuis plusieurs années.
+                </p>
+                <a class="accueil-bio-lien" href="biographie.html">Lire plus ></a>
+            </div>
+        </section>
+        <section id="accueil-avenir" class="conteneur">
+            <h2>À VENIR</h2>
+            <div class="flex">
+                <div class="flex-2x1 flex carte-oeuvre">
+                    <div class="accueil-avenir-couverture">
+                        <a href="#">
+                            <div class="couverture-280" style="background-image: url('./img/musique/AlexJoset.png')"></div>
+                        </a>
+                    </div>
+                    <div class="accueil-avenir-details">
+                        <span class="accueil-oeuvre-type">Spectacle</span>
+                        <div>
+                            <span class="accueil-oeuvre-date">10 janvier 2020</span>
+                            <span class="accueil-oeuvre-titre">Titre de l'oeuvre</span>
+                            <span class="accueil-oeuvre-etiquette">Montréal</span>
+                        </div>
+                        <a class="accueil-oeuvre-cta" href="#">Billets ></a>
+                    </div>
+                </div>
+                <div class="flex-2x1 flex carte-oeuvre">
+                    <div class="accueil-avenir-couverture">
+                        <a href="#">
+                            <div class="couverture-280" style="background-image: url('./img/musique/AlexJoset.png')"></div>
+                        </a>
+                    </div>
+                    <div class="accueil-avenir-details">
+                        <span class="accueil-oeuvre-type">Enregistrement</span>
+                        <div>
+                            <span class="accueil-oeuvre-date">10 janvier 2020</span>
+                            <span class="accueil-oeuvre-titre">Titre de l'oeuvre</span>
+                            <span class="accueil-oeuvre-etiquette">Montréal</span>
+                        </div>
+                        <a class="accueil-oeuvre-cta" href="#">Billets ></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="accueil-infolettre" class="carte">
+            <div class="conteneur">
+                <h3>Infolettre</h3>
+                <p class="flex-centre">
+                    Restez à l'affût des dernières nouvelles en vous abonnant à l'infolettre. Profitez entre autres de préventes exclusives sur les billets de spectacles.
+                </p>
+                <div class="flex-centre">
                     <form action="#" method="post" class="flex accueil-infolettre-form">
                         <input type="text" name="email-newsletter" id="email-newsletter" placeholder="Courriel...">
                         <button class="btn btn-dore"><a href="#">S'abonner</a></button>
                     </form>
                 </div>
             </div>
-            <div class="conteneur">
-                
-            </div>
+        </section>
+        <section id="accueil-dernieres-parutions" class="conteneur">
+                <div class="flex">
+                    <div class="flex-2x1 flex carte-oeuvre">
+                        <div class="accueil-dernieres-couverture">
+                            <a href="#">
+                                <div class="couverture-280" style="background-image: url('./img/musique/AlexJoset.png')"></div>
+                            </a>
+                        </div>
+                        <div class="accueil-dernieres-details">
+                            <div>
+                                <span class="accueil-oeuvre-type">Spectacle</span>
+                                <span class="accueil-oeuvre-date">10 janvier 2020</span>
+                                <span class="accueil-oeuvre-titre">Titre de l'oeuvre</span>
+                            </div>
+                            <a class="accueil-oeuvre-cta" href="#">Billets ></a>
+                        </div>
+                    </div>
+                    <div class="flex-2x1 flex carte-oeuvre">
+                        <div class="accueil-dernieres-couverture">
+                            <a href="#">
+                                <div class="couverture-280" style="background-image: url('./img/musique/AlexJoset.png')"></div>
+                            </a>
+                        </div>
+                        <div class="accueil-dernieres-details">
+                            <div>
+                                <span class="accueil-oeuvre-type">Spectacle</span>
+                                <span class="accueil-oeuvre-date">10 janvier 2020</span>
+                                <span class="accueil-oeuvre-titre">Titre de l'oeuvre</span>
+                            </div>
+                            <a class="accueil-oeuvre-cta" href="#">Billets ></a>
+                        </div>
+                    </div>
+                </div>
+            <p class="flex-centre accueil-derniere-disco">
+                <a href="musique.html">Consultez la discographie complète ></a>
+            </p>
         </section>
     </main>
     
     <div class="conteneur">
         <footer>
-            <div class="navigation">
-                <h5>Navigation</h5>
-                <a href="#">Accueil</a>
-                <a href="#">Biographie</a>
-                <a href="#">Musique</a>
-                <a href="#">Contact</a>
+            <div>
+                <div class="navigation">
+                    <h5>Navigation</h5>
+                    <a href="#">Accueil</a>
+                    <a href="#">Biographie</a>
+                    <a href="#">Musique</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="agence">
+                    <h5>Agence</h5>
+                    <p>Agence InStudios</p>
+                    <p>
+                        <a href="http://www.instudios.ca">instudios.ca</a>
+                    </p>
+                </div>
             </div>
-            <div class="agence">
-                <h5>Agence</h5>
-                <p>Agence InStudios</p>
-                <p>
-                    <a href="http://www.instudios.ca">instudios.ca</a>
-                </p>
-            </div>
-            <div class="social">
-                <h5>Social</h5>
-                <a href="#">
-                    <img src="./img/footer-facebook.png" alt="Facebook">
-                </a>
-                <a href="#">
-                    <img src="./img/footer-linkedin.png" alt="LinkedIn">
-                </a>
-                <a href="#">
-                    <img src="./img/footer-bandcamp.png" alt="Bandcamp">
-                </a>
-            </div>
-            <div class="logo-admin">
-                <img src="./img/footer-logo.png" alt="Gabriel Forion, compositeur">
-                <a href="./admin/" class="small">Administration</a>
+            <div>
+                <div class="social">
+                    <h5>Social</h5>
+                    <div>
+                        <a href="#">
+                            <img src="./img/footer-facebook.png" alt="Facebook">
+                        </a>
+                        <a href="#">
+                            <img src="./img/footer-linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="#">
+                            <img src="./img/footer-bandcamp.png" alt="Bandcamp">
+                        </a>
+                    </div>
+                </div>
+                <div class="logo-admin">
+                    <img src="./img/footer-logo.png" alt="Gabriel Forion, compositeur">
+                    <a href="./admin/" class="small">Administration</a>
+                </div>
             </div>
         </footer>
         <p id="credit-creation">Site réalisé par Nicholas Gratton (0270256) de CSTJ</p>

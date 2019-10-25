@@ -12,9 +12,10 @@ header {
   position: relative;
   height: 910px;
   display: flex;
+  margin-bottom: 80px;
 }
 
-header .head-nom {
+header .accueil-head-nom {
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -25,11 +26,11 @@ header .head-nom {
   background-color: rgba(255, 255, 255, 0.75);
 }
 
-header .head-nom #accueil-logo {
+header .accueil-head-nom #accueil-logo {
   margin-top: -47px;
 }
 
-header .head-nom #header-nom-gf {
+header .accueil-head-nom #accueil-header-nom {
   font-family: league-gothic, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -42,12 +43,13 @@ header .head-nom #header-nom-gf {
   line-height: 180px;
 }
 
-header .head-nom .header-compositeur {
-  font-size: 40px;
+header .accueil-head-nom .accueil-header-compositeur {
+  font-size: 28px;
   margin-bottom: 40px;
+  margin-right: 20px;
 }
 
-header .head-photo {
+header .accueil-head-photo {
   position: absolute;
   right: 0;
   top: 0;
@@ -56,7 +58,7 @@ header .head-photo {
   z-index: 10;
 }
 
-header .head-photo .head-photo-gf {
+header .accueil-head-photo .accueil-head-photo-gf {
   height: 100%;
   width: 100%;
   background-image: url("../img/accueil-header-photo-bg.jpg");
@@ -64,8 +66,203 @@ header .head-photo .head-photo-gf {
   background-size: cover;
 }
 
-.accueil-infolettre .accueil-infolettre-form {
-  width: 500px;
+#accueil-bio {
+  position: relative;
+  display: flex;
+  margin: 100px auto;
+}
+
+#accueil-bio .accueil-bio-photo {
+  height: 440px;
+  width: calc(50% + 40px);
+  background-image: url("../img/accueil-bio-photo.jpg");
+  background-position: right;
+  background-size: cover;
+}
+
+#accueil-bio .accueil-bio-txt {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.75);
+  width: calc(50% + 40px);
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+}
+
+#accueil-bio .accueil-bio-txt img {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  margin-top: -45px;
+}
+
+#accueil-bio .accueil-bio-txt p {
+  font-size: 24px;
+  line-height: 50px;
+}
+
+#accueil-bio .accueil-bio-txt a {
+  font-size: 24px;
+  align-self: flex-end;
+}
+
+#accueil-avenir .accueil-avenir-couverture {
+  height: 280px;
+  flex: 1;
+}
+
+#accueil-avenir .accueil-avenir-couverture .couverture-280 {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+#accueil-avenir .carte-oeuvre {
+  padding: 0;
+  transition: box-shadow .4s ease-out;
+}
+
+#accueil-avenir .carte-oeuvre:hover {
+  box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.3), 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+#accueil-avenir .carte-oeuvre .accueil-avenir-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+#accueil-avenir .carte-oeuvre .accueil-avenir-details div {
+  display: flex;
+  flex-direction: column;
+}
+
+#accueil-infolettre {
+  margin: 100px 0;
+}
+
+#accueil-infolettre .accueil-infolettre-form {
+  width: 500px;
+  margin: 10px;
+}
+
+#accueil-dernieres-parutions .carte-oeuvre {
+  padding: 0;
+  transition: box-shadow .4s ease-out;
+}
+
+#accueil-dernieres-parutions .carte-oeuvre:hover {
+  box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.3), 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+#accueil-dernieres-parutions .carte-oeuvre .accueil-dernieres-couverture {
+  height: 400px;
+  flex: 1;
+}
+
+#accueil-dernieres-parutions .carte-oeuvre .accueil-dernieres-couverture .couverture-280 {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+#accueil-dernieres-parutions .carte-oeuvre .accueil-dernieres-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+#accueil-dernieres-parutions .carte-oeuvre .accueil-dernieres-details div {
+  display: flex;
+  flex-direction: column;
+}
+
+#accueil-dernieres-parutions .accueil-derniere-disco {
+  font-size: 28px;
+}
+
+.accueil-oeuvre-type {
+  color: #7DBBC9;
+  font-size: 18px;
+}
+
+.accueil-oeuvre-date {
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.accueil-oeuvre-titre {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.accueil-oeuvre-etiquette {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.accueil-oeuvre-cta {
+  font-size: 28px;
+  align-self: flex-end;
+}
+
+/********************
+*
+*   MEDIA QUERIES
+*
+*********************/
+@media screen and (max-width: 1200px) {
+  #accueil-avenir .carte-oeuvre .accueil-avenir-details {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  header .accueil-head-photo {
+    height: 700px;
+  }
+  #accueil-avenir .carte-oeuvre .accueil-avenir-details {
+    padding: 20px;
+  }
+  header {
+    position: relative;
+    height: 700px;
+    display: flex;
+    margin-bottom: 80px;
+  }
+  header .accueil-head-nom {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: calc(50% + 40px);
+    padding-right: 40px;
+    z-index: 90;
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+  header .accueil-head-nom #accueil-logo {
+    margin-top: -47px;
+  }
+  header .accueil-head-nom #accueil-header-nom {
+    font-size: 140px;
+    line-height: 120px;
+    margin: 60px -20px 60px 0;
+  }
+  header .accueil-head-nom .accueil-header-compositeur {
+    font-size: 28px;
+    margin-bottom: 40px;
+    margin-right: 20px;
+  }
 }

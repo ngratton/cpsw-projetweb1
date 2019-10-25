@@ -30,6 +30,8 @@ header {
         flex: 1;
         margin-left: 15px;
         margin-right: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
 
         button {
             width: 100%;
@@ -41,14 +43,17 @@ header {
 
 section {
     margin-bottom: 100px;
-
+    
+    .musique-affichage-oeuvre {
+        display: flex;
+        flex-wrap: wrap;
+        transition: flex .3s ease-out;
+    }
 
     .carte-oeuvre {
-        max-width: 380px;
-        flex: 1;
+        width: 360px;
         background-color: white;
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-right: 30px;
         margin-bottom: 40px;
         transition: box-shadow .2s ease-out;
     
@@ -59,34 +64,19 @@ section {
 
         .oeuvre-couverture {
             height: 380px;
-            width: 380px;
 
             .couverture-380 {
-                height: 380px;
-                width: 380px;
+                height: 100%;
                 background-size: cover;
                 background-position: center;
             }
         }
 
-        &:first-of-type {
-            margin-left: 0;
-        }
-
-        &:nth-child(3n) {
-            margin-right: 0;
-        }
-
-        &:nth-child(4n) {
-            margin-left: 0;
-        }
-
         .oeuvre-details {
-            padding: 30px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            // height: 220px;
 
             & > div {
                 display: flex;
@@ -94,7 +84,7 @@ section {
             }
 
             a {
-                text-align: right;
+                align-self: flex-end;
             }
         }
     }
@@ -105,7 +95,6 @@ section {
 
     .couverture-280 {
         height: 280px;
-        width: 280px;
         background-size: cover;
         background-position: center;
     }
@@ -121,7 +110,6 @@ section {
     }
 
     .oeuvre-details {
-        // height: 280px;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -160,9 +148,163 @@ section {
 
 .oeuvre-etiquette {
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .oeuvre-cta {
     font-size: 28px;
+}
+
+
+/********************
+*
+*   MEDIA QUERIES
+*
+*********************/
+
+
+//##################################
+//##########   1200 PX   ########### 
+//##################################
+
+@media screen and (max-width: 1200px) {
+    section {
+        margin-bottom: 100px;
+    
+    
+        .carte-oeuvre {
+            width: 240px;
+            // flex: 1;
+    
+            .oeuvre-couverture {
+                height: 280px;
+            }
+    
+            .oeuvre-details {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                // height: 220px;
+    
+                & > div {
+                    display: flex;
+                    flex-direction: column;
+                }
+    
+                a {
+                    justify-self: flex-end;
+                }
+            }
+        }
+    }
+}
+
+//##################################
+//###########   992 PX   ########### 
+//##################################
+
+@media screen and (max-width: 992px) {
+    .musique-btn-styles {
+    
+        a {
+    
+            button {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    section {
+        margin-bottom: 100px;
+    
+    
+        .carte-oeuvre {
+            width: 260px;
+            // flex: 1;
+    
+            .oeuvre-couverture {
+                height: 380px;
+            }
+    
+            .oeuvre-details {
+                padding: 20px;
+    
+                a {
+                    justify-self: flex-end;
+                }
+            }
+        }
+    }
+}
+ 
+// ##################################
+// ###########   768 PX   ########### 
+// ##################################
+   
+@media screen and (max-width: 768px) {
+
+    .musique-btn-styles {
+        flex-wrap: wrap;
+    
+        a {
+                .musique-btn-filtres {
+                min-width: 270px;
+            }
+        }
+    }
+
+section {
+    margin-bottom: 100px;
+
+
+    .carte-oeuvre {
+        max-width: 380px;
+        // flex: 1;
+
+        .oeuvre-couverture {
+            height: 380px;
+        }
+
+        .oeuvre-details {
+            padding: 20px;
+
+            a {
+                justify-self: flex-end;
+            }
+        }
+    }
+}
+}
+
+//##################################
+//###########   576 PX   ########### 
+//##################################
+
+@media screen and (max-width: 576px) {
+    h2 {
+        font-size: 40px;
+    }
+
+    section {
+        margin-bottom: 100px;
+    
+        .carte-oeuvre {
+            flex: 1;
+            max-width: 150px;
+            margin-right: 10px;
+    
+            .oeuvre-couverture {
+                height: 240px;
+            }
+    
+            .oeuvre-details {
+                padding: 20px;
+    
+                a {
+                    justify-self: flex-end;
+                }
+            }
+        }
+    }
 }

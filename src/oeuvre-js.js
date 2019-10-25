@@ -8,12 +8,29 @@ export default class App {
 	 */
 	static main() {
 		
-		/* PAGE OEUVRE */
+		// Ajuste la hauteur de div parent selon la longueur du texte de desctiption
 		var oeuvreDescH = document.querySelector(".oeuvre-desc").clientHeight;
 		var oeuvreArtDiv = document.querySelector(".oeuvre-art");
 		if (oeuvreArtDiv.clientHeight < oeuvreDescH) {
 			oeuvreArtDiv.style.height = oeuvreDescH + "px";
 		}
+
+		var play = document.querySelector("#piste-play");
+		play.addEventListener("click", e => {
+			this.demarrerAudio();
+		});
+
+	}
+
+	static demarrerAudio() {
+		var btnPlay = document.querySelector("#btn-play");
+		var pisteTemps = document.querySelector(".piste-temps");
+		var lecteurAudio = document.querySelector("#lecteur-audio");
+		btnPlay.parentNode.removeChild(btnPlay);
+		pisteTemps.parentNode.removeChild(pisteTemps);
+		lecteurAudio.removeAttribute("hidden");
+		lecteurAudio.autoplay = true;
+		lecteurAudio.play();
 	}
 
 	/**

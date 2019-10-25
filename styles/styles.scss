@@ -207,37 +207,54 @@ header {
 }
 
 main {
-    a  {
+    a {
         position: relative;
         color: $couleur-dore;
         transition: color .2s ease-out;
 
-        // &:before {
-        //     content: "";
-        //     position: absolute;
-        //     width: 100%;
-        //     height: 1px;
-        //     bottom: 0;
-        //     left: 0;
-        //     background-color: $couleur-turquoise;
-        //     visibility: hidden;
-        //     transform: scaleX(0);
-        //     transition: all 0.2s ease-out;
-        //   }
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: $couleur-turquoise;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.2s ease-out;
+          }
 
-        //   &:hover:before {
-        //     visibility: visible;
-        //     transform: scaleX(1);
-        //   }
+          &:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
+          }
 
         &:hover {
             color: $couleur-gris-fonce;
         }
     }
+
+    .liens-img {
+        position: relative;
+
+        &:before {
+            content: "";
+            visibility: hidden;
+        }
+
+        &:hover:before {
+            visibility: hidden;
+        }
+    }
+
+}
+
+section {
+    margin-bottom: 100px;
 }
 
 footer {
-    // height: 180px;
     background-color: #262C2D;
     padding: 70px 102px;
     margin-top: 150px;
@@ -254,50 +271,68 @@ footer {
         }
     }
 
-    .navigation {
+    div {
+        flex: 1;
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
 
-        & * {
-            margin: 0;
-            margin-bottom: 10px;
-        }
-    }
+        .navigation {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
     
-    .agence {
-        p {
-            color: white;
-        }
-
-        & * {
-            margin: 0;
-            margin-bottom: 10px;
-        }
-    }
-
-    .social {
-        a {
-            margin-right: 10px;
-
-            img {
-                transition: filter 0.2s ease-out;
+            & * {
+                margin: 0;
+                margin-bottom: 10px;
             }
+        }
+        
+        .agence {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
 
-            &:hover {
+            p {
+                color: white;
+            }
+    
+            & * {
+                margin: 0;
+                margin-bottom: 10px;
+            }
+        }
+    
+        .social {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                margin-right: 10px;
+    
                 img {
-                    filter: brightness(1.2);
+                    transition: filter 0.2s ease-out;
+                }
+    
+                &:hover {
+                    img {
+                        filter: brightness(1.2);
+                    }
                 }
             }
         }
+    
+        .logo-admin {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 180px;
+        }
     }
 
-    .logo-admin {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-end;
-        height: 100%;
-    }
 }
 
 #credit-creation {
@@ -325,21 +360,31 @@ footer {
     }
 }
 
+.carte-oeuvre {
+    background-color: white;
+    align-self: flex-start;
+    
+    p {
+        font-size: 18px;
+    }
+}
+
 .carte-large {
     background-color: white;
     align-self: flex-start;
 }
 
-.flex-gauche {
-    margin: 0 15px 30px 0;
-    flex: 1;
+.flex-2x1 {
+    
+    &:nth-of-type(1) {
+        margin: 0 15px 30px 0;
+        flex: 1;
+    }
+    &:nth-of-type(2) {
+        margin: 0 0 30px 15px;
+        flex: 1;
+    }
 }
-
-.flex-droite {
-    margin: 0 0 30px 15px;
-    flex: 1;
-}
-
 
 
 /******************
@@ -350,6 +395,10 @@ footer {
 
 
 .flex {
+    display: flex;
+}
+
+.flex-conteneur {
     display: flex;
 }
 
@@ -468,3 +517,136 @@ input[type="submit"] {
 *   MEDIA QUERIES
 *
 *********************/
+
+//##################################
+//##########   1200 PX   ########### 
+//##################################
+
+@media screen and (max-width: 1200px) {
+    .conteneur {
+        padding: 0 20px;
+    }
+    
+    .carte {
+        padding: 20px;
+    }
+}
+
+//##################################
+//###########   992 PX   ########### 
+//##################################
+
+@media screen and (max-width: 992px) {
+    
+    h1 {
+        font-size: 140px;
+        top: 270px;
+    }
+
+    .carte {
+        align-self: initial;
+    }
+    
+    .carte-oeuvre {
+        flex-direction: column;
+    }
+
+    .flex-conteneur {
+        flex-direction: column;
+    }
+
+    .flex-2x1 {
+        &:nth-of-type(1) {
+            flex-grow: 1;
+            margin: 20px 0;
+        }
+        &:nth-of-type(2) {
+            flex-grow: 1;
+            margin: 20px 0;
+        }
+    }
+
+    footer {
+        padding: 60px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    
+        div {
+            width: 100%;
+    
+            .navigation {
+                margin-bottom: 40px;
+            }
+            
+            .agence {
+                align-items: flex-end;
+            }
+        
+            .social {
+    
+                div {
+                    display: flex;
+                    justify-content: flex-start;
+                }
+            }
+        
+            .logo-admin {
+                justify-content: space-between;
+                align-items: flex-end;
+                height: 0;
+
+                img {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+//##################################
+//###########   768 PX   ########### 
+//##################################
+    
+@media screen and (max-width: 768px) {
+
+    .flex {
+        flex-direction: column;
+    }
+}
+
+//##################################
+//###########   576 PX   ########### 
+//##################################
+
+@media screen and (max-width: 576px) {
+    
+    header {
+        height: 340px;
+    }
+
+    h1 {
+        font-size: 80px;
+        top: 255px;
+    }
+
+    h2 {
+        font-size: 50px;
+        margin: 30px 0 40px 0;
+    
+        &:after {
+            content: '';
+            background-size: contain;
+            height: 40px;
+            top: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    nav {
+        #nav-liens {
+            visibility: hidden;
+        }
+    }
+}

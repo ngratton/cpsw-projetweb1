@@ -155,7 +155,7 @@ header {
 
     &:hover {
         .cls-1{
-            fill: url('#linear-gradient');
+            fill: #E44ACA;
         }
         .cls-2{
             fill: white;
@@ -212,6 +212,8 @@ header {
     .piste-temps-play {
         // flex: 1;
         display: flex;
+        align-items: center;
+        height: 40px;
 
         .piste-play {
             display: flex;
@@ -233,6 +235,12 @@ header {
             }
         }
 
+        audio {
+            height: 40px;
+            outline: none;
+            // transition: all .2s ease-out;
+        }
+
         .piste-disabled {
             cursor: default;
 
@@ -250,4 +258,28 @@ header {
             }
         }
     }
+}
+
+
+/********************
+*
+*   MEDIA QUERIES
+*
+*********************/
+
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 992px) {
+
+}
+    
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 576px) {
+    
 }

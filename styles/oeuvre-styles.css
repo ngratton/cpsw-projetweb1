@@ -142,7 +142,7 @@ header .page-header {
 }
 
 #oeuvre-stores-itunes:hover .cls-1 {
-  fill: url("#linear-gradient");
+  fill: #E44ACA;
 }
 
 #oeuvre-stores-itunes:hover .cls-2 {
@@ -194,6 +194,8 @@ header .page-header {
 
 .oeuvre-piste .piste-temps-play {
   display: flex;
+  align-items: center;
+  height: 40px;
 }
 
 .oeuvre-piste .piste-temps-play .piste-play {
@@ -213,6 +215,11 @@ header .page-header {
   fill: #262C2D;
 }
 
+.oeuvre-piste .piste-temps-play audio {
+  height: 40px;
+  outline: none;
+}
+
 .oeuvre-piste .piste-temps-play .piste-disabled {
   cursor: default;
 }
@@ -226,3 +233,9 @@ header .page-header {
 .oeuvre-piste .piste-temps-play .piste-disabled:hover svg {
   fill: #DCE2E8;
 }
+
+/********************
+*
+*   MEDIA QUERIES
+*
+*********************/
