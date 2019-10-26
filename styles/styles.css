@@ -13,15 +13,55 @@
   box-sizing: border-box;
 }
 
-body,
-html {
+html,
+body {
   background-color: #DCE2E8;
   font-family: minion-pro, serif;
   font-weight: 600;
   font-style: italic;
   margin: 0;
-  padding: 0;
   color: #262C2D;
+  position: relative;
+}
+
+html .nav-slide-in,
+body .nav-slide-in {
+  right: 300px;
+  animation-name: slide-in;
+  animation-duration: .23s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slide-in {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 300px;
+  }
+}
+
+html .nav-slide-out,
+body .nav-slide-out {
+  right: 0;
+  animation-name: slide-out;
+  animation-duration: .2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slide-out {
+  0% {
+    right: 300px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+body {
+  padding: 20px 0 0 0;
 }
 
 h1,
@@ -124,7 +164,8 @@ a {
 *
 ************************/
 nav {
-  margin: 30px 0;
+  position: relative;
+  margin-bottom: 30px;
   height: 52px;
   background-repeat: repeat-x;
   background-position: center;
@@ -177,6 +218,14 @@ nav .conteneur a:hover:after {
 
 nav .conteneur a:hover {
   color: #946F2B;
+}
+
+nav #nav-hamburger {
+  visibility: hidden;
+  position: absolute;
+  top: 12px;
+  right: 30px;
+  cursor: pointer;
 }
 
 header {
@@ -366,6 +415,10 @@ footer div .logo-admin {
 *   UTILITAIRES
 *
 *******************/
+.hidden {
+  display: none;
+}
+
 .flex {
   display: flex;
 }
@@ -511,14 +564,6 @@ input[type="submit"] {
   .flex-conteneur {
     flex-direction: column;
   }
-  .flex-2x1:nth-of-type(1) {
-    flex-grow: 1;
-    margin: 20px 0;
-  }
-  .flex-2x1:nth-of-type(2) {
-    flex-grow: 1;
-    margin: 20px 0;
-  }
   footer {
     padding: 60px;
     flex-direction: column;
@@ -546,17 +591,20 @@ input[type="submit"] {
   footer div .logo-admin img {
     margin-bottom: 20px;
   }
-}
-
-@media screen and (max-width: 768px) {
-  .flex {
-    flex-direction: column;
+  .flex-2x1:nth-of-type(1) {
+    margin: 0 0 30px 0;
+    flex: 1;
+  }
+  .flex-2x1:nth-of-type(2) {
+    margin: 0 0 30px 0;
+    flex: 1;
   }
 }
 
 @media screen and (max-width: 576px) {
   header {
     height: 340px;
+    margin: 20px 0;
   }
   h1 {
     font-size: 80px;
@@ -572,10 +620,43 @@ input[type="submit"] {
     height: 40px;
     top: 20px;
   }
-}
-
-@media screen and (max-width: 576px) {
+  nav {
+    margin-bottom: 20px 0;
+  }
   nav #nav-liens {
-    visibility: hidden;
+    position: absolute;
+    width: 300px;
+    top: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: -1;
+  }
+  nav #nav-liens #nav-hamclose {
+    width: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    color: #7DBBC9;
+  }
+  nav #nav-liens #nav-logo-menu {
+    margin: 30px 0;
+    cursor: default;
+  }
+  nav #nav-liens a {
+    margin: 15px 0;
+  }
+  nav #nav-hamburger {
+    visibility: visible;
+  }
+  .flex {
+    flex-direction: column;
+  }
+  footer {
+    padding: 20px 30px 60px 30px;
+  }
+  .flex-2x1:nth-of-type(1) {
+    margin: 0 0 30px 0;
+  }
+  .flex-2x1:nth-of-type(2) {
+    margin: 0 0 30px 0;
   }
 }

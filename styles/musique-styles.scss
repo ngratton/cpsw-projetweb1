@@ -47,13 +47,13 @@ section {
     .musique-affichage-oeuvre {
         display: flex;
         flex-wrap: wrap;
-        transition: flex .3s ease-out;
     }
 
     .carte-oeuvre {
-        width: 360px;
+        flex: 0 0 370px;
         background-color: white;
-        margin-right: 30px;
+        margin-left: 15px;
+        margin-right: 15px;
         margin-bottom: 40px;
         transition: box-shadow .2s ease-out;
     
@@ -63,7 +63,7 @@ section {
         }
 
         .oeuvre-couverture {
-            height: 380px;
+            height: 370px;
 
             .couverture-380 {
                 height: 100%;
@@ -92,6 +92,7 @@ section {
 
 .avenir-couverture {
     height: 280px;
+    flex: 0 1 280px;
 
     .couverture-280 {
         height: 280px;
@@ -173,11 +174,10 @@ section {
     
     
         .carte-oeuvre {
-            width: 240px;
-            // flex: 1;
+            flex: 0 1 20em;
     
             .oeuvre-couverture {
-                height: 280px;
+                height: 20em;
             }
     
             .oeuvre-details {
@@ -220,11 +220,10 @@ section {
     
     
         .carte-oeuvre {
-            width: 260px;
-            // flex: 1;
+            flex: 0 0 16em;
     
             .oeuvre-couverture {
-                height: 380px;
+                height: 16em;
             }
     
             .oeuvre-details {
@@ -248,33 +247,65 @@ section {
         flex-wrap: wrap;
     
         a {
-                .musique-btn-filtres {
+            .musique-btn-filtres {
                 min-width: 270px;
             }
         }
     }
 
-section {
-    margin-bottom: 100px;
+    section {
+        margin-bottom: 100px;
 
 
-    .carte-oeuvre {
-        max-width: 380px;
-        // flex: 1;
+        .carte-oeuvre {
+            flex: 1 0 260px;
 
-        .oeuvre-couverture {
-            height: 380px;
-        }
+            .oeuvre-couverture {
+                height: 260px;
+            }
 
-        .oeuvre-details {
-            padding: 20px;
+            .oeuvre-details {
+                padding: 20px;
 
-            a {
-                justify-self: flex-end;
+                a {
+                    justify-self: flex-end;
+                }
             }
         }
     }
-}
+
+    .carte-large {
+        
+        .oeuvre-details {        
+            div:nth-child(1) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .oeuvre-type {
+        color: $couleur-turquoise;
+        font-size: 16px;
+    }
+
+    .oeuvre-date {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .oeuvre-titre {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .oeuvre-etiquette {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .oeuvre-cta {
+        font-size: 24px;
+    }
 }
 
 //##################################
@@ -290,8 +321,7 @@ section {
         margin-bottom: 100px;
     
         .carte-oeuvre {
-            flex: 1;
-            max-width: 150px;
+            flex: 1 1 260px;
             margin-right: 10px;
     
             .oeuvre-couverture {

@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="./styles/styles.min.css">
     <link rel="stylesheet" href="./styles/oeuvre-styles.min.css">
 	<script type="module">
-		import App from "./src/oeuvre-js.js";
+		import App from "./src/js.js";
 		App.load().then(() => App.main());
+	</script>
+	<script type="module">
+		import Oeuvrepage from "./src/oeuvre-js.js";
+		Oeuvrepage.load().then(() => Oeuvrepage.main());
 	</script>
 </head>
 <body>
@@ -17,11 +21,16 @@
         <div class="conteneur">
             <img src="./img/nav-logo.png" alt="Gabriel Forion - compositeur" id="nav-logo">
             <div id="nav-liens">
+                <img id="nav-hamclose" src="./img/icons/close.svg" class="hidden">
+                <img src="./img/nav-logo.png" alt="Gabriel Forion - compositeur" id="nav-logo-menu" class="hidden">
                 <a href="./">Accueil</a>
                 <a href="biographie.html">Biographie</a>
                 <a href="musique.html">Musique</a>
                 <a href="contact.html">Contact</a>
             </div>
+        </div>
+        <div id="nav-hamburger">
+            <img src="./img/nav-hamburger.png" alt="">
         </div>
     </nav>
     <header>
@@ -76,7 +85,7 @@
                     </div>
                 </div>
             </div>
-            <div class="conteneur flex">
+            <div class="conteneur flex-conteneur">
                 <div class="carte flex-2x1">
                     <h3>ACHETER L'ALBUM</h3>
                     <div class="oeuvre-stores">

@@ -24,15 +24,52 @@
     box-sizing: border-box;
 }
 
-body,
-html {
+html,
+body {
     background-color: $couleur-gris-pale;
-    font-family: minion-pro, serif;
+    font-family: $font-body;
     font-weight: 600;
     font-style: italic;
     margin: 0;
-    padding: 0;
     color: $couleur-gris-fonce;
+    position: relative;
+
+    .nav-slide-in {
+        right: 300px;
+        animation-name: slide-in;
+        animation-duration: .23s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+
+        @keyframes slide-in {
+            0% {
+                right: 0;
+            }
+            100% {
+                right: 300px;
+            }
+        }
+    }
+    .nav-slide-out {
+        right: 0;
+        animation-name: slide-out;
+        animation-duration: .2s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+
+        @keyframes slide-out {
+            0% {
+                right: 300px;
+            }
+            100% {
+                right: 0;
+            }
+        }
+    }
+}
+
+body {
+    padding: 20px 0 0 0;
 }
 
 h1,
@@ -138,7 +175,8 @@ a {
 ************************/
 
 nav {
-    margin: 30px 0;
+    position: relative;
+    margin-bottom: 30px;
     height: 52px;
     background-repeat: repeat-x;
     background-position: center;
@@ -154,6 +192,7 @@ nav {
             cursor: pointer;
         }
 
+        
         #nav-liens {
             display: flex;
             justify-content: space-around;
@@ -190,8 +229,14 @@ nav {
                 color: $couleur-dore;
             }
         }
+    }
 
-        
+    #nav-hamburger {
+        visibility: hidden;
+        position: absolute;
+        top: 12px;
+        right: 30px;
+        cursor: pointer;
     }
 }
 
@@ -393,6 +438,10 @@ footer {
 *
 *******************/
 
+.hidden {
+    // visibility: hidden;
+    display: none;
+}
 
 .flex {
     display: flex;
@@ -451,7 +500,6 @@ footer {
         height: 100%;
         top: 0;
         left: 0%;
-        // transform: translate(-50%, -50%);
         background-color: $couleur-gris-fonce;
         visibility: hidden;
         transform: scale(0);
@@ -555,17 +603,6 @@ input[type="submit"] {
         flex-direction: column;
     }
 
-    .flex-2x1 {
-        &:nth-of-type(1) {
-            flex-grow: 1;
-            margin: 20px 0;
-        }
-        &:nth-of-type(2) {
-            flex-grow: 1;
-            margin: 20px 0;
-        }
-    }
-
     footer {
         padding: 60px;
         flex-direction: column;
@@ -602,6 +639,17 @@ input[type="submit"] {
             }
         }
     }
+    .flex-2x1 {
+    
+        &:nth-of-type(1) {
+            margin: 0 0 30px 0;
+            flex: 1;
+        }
+        &:nth-of-type(2) {
+            margin: 0 0 30px 0;
+            flex: 1;
+        }
+    }
 }
 
 //##################################
@@ -610,9 +658,7 @@ input[type="submit"] {
     
 @media screen and (max-width: 768px) {
 
-    .flex {
-        flex-direction: column;
-    }
+
 }
 
 //##################################
@@ -623,6 +669,7 @@ input[type="submit"] {
     
     header {
         height: 340px;
+        margin: 20px 0;
     }
 
     h1 {
@@ -641,12 +688,55 @@ input[type="submit"] {
             top: 20px;
         }
     }
-}
 
-@media screen and (max-width: 576px) {
     nav {
+        margin-bottom: 20px 0;
+
         #nav-liens {
-            visibility: hidden;
+            position: absolute;
+            width: 300px;
+            // right: -250px;
+            top: 10px;
+            flex-direction: column;
+            align-items: flex-end;
+            z-index: -1;
+
+            #nav-hamclose {
+                width: 30px;
+                margin-bottom: 30px;
+                cursor: pointer;
+                color: $couleur-turquoise;
+            }
+
+            #nav-logo-menu {
+                margin: 30px 0;
+                cursor: default;
+            }
+
+            a {
+                margin: 15px 0;
+            }
+        }
+
+        #nav-hamburger {
+            visibility: visible;
+        }
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    footer {
+        padding: 20px 30px 60px 30px;
+    }
+
+    .flex-2x1 {
+        &:nth-of-type(1) {
+            margin: 0 0 30px 0;
+        }
+        &:nth-of-type(2) {
+            margin: 0 0 30px 0;
         }
     }
 }

@@ -86,7 +86,7 @@ header .accueil-head-photo .accueil-head-photo-gf {
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.75);
   width: calc(50% + 40px);
-  right: 0;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 90;
@@ -109,6 +109,18 @@ header .accueil-head-photo .accueil-head-photo-gf {
   align-self: flex-end;
 }
 
+.accueil-carte-oeuvre {
+  padding: 0;
+  transition: box-shadow .4s ease-out;
+  background-color: white;
+  align-self: flex-start;
+}
+
+.accueil-carte-oeuvre:hover {
+  box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.3), 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
 #accueil-avenir .accueil-avenir-couverture {
   height: 280px;
   flex: 1;
@@ -121,17 +133,7 @@ header .accueil-head-photo .accueil-head-photo-gf {
   background-position: center;
 }
 
-#accueil-avenir .carte-oeuvre {
-  padding: 0;
-  transition: box-shadow .4s ease-out;
-}
-
-#accueil-avenir .carte-oeuvre:hover {
-  box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.3), 0 0 10px 5px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-}
-
-#accueil-avenir .carte-oeuvre .accueil-avenir-details {
+#accueil-avenir .accueil-avenir-details {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -139,7 +141,7 @@ header .accueil-head-photo .accueil-head-photo-gf {
   padding: 20px 30px;
 }
 
-#accueil-avenir .carte-oeuvre .accueil-avenir-details div {
+#accueil-avenir .accueil-avenir-details div {
   display: flex;
   flex-direction: column;
 }
@@ -153,29 +155,27 @@ header .accueil-head-photo .accueil-head-photo-gf {
   margin: 10px;
 }
 
-#accueil-dernieres-parutions .carte-oeuvre {
-  padding: 0;
-  transition: box-shadow .4s ease-out;
+#accueil-infolettre .accueil-infolettre-form .accueil-infolettre-input {
+  flex: 2;
 }
 
-#accueil-dernieres-parutions .carte-oeuvre:hover {
-  box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.3), 0 0 10px 5px rgba(0, 0, 0, 0.1);
-  z-index: 999;
+#accueil-infolettre .accueil-infolettre-form .accueil-infolettre-input #email-newsletter {
+  width: calc(100% - 20px);
 }
 
-#accueil-dernieres-parutions .carte-oeuvre .accueil-dernieres-couverture {
+#accueil-dernieres-parutions .accueil-dernieres-couverture {
   height: 400px;
   flex: 1;
 }
 
-#accueil-dernieres-parutions .carte-oeuvre .accueil-dernieres-couverture .couverture-280 {
+#accueil-dernieres-parutions .accueil-dernieres-couverture .couverture-280 {
   height: 100%;
   width: 100%;
   background-size: cover;
   background-position: center;
 }
 
-#accueil-dernieres-parutions .carte-oeuvre .accueil-dernieres-details {
+#accueil-dernieres-parutions .accueil-dernieres-details {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -183,7 +183,7 @@ header .accueil-head-photo .accueil-head-photo-gf {
   padding: 20px 30px;
 }
 
-#accueil-dernieres-parutions .carte-oeuvre .accueil-dernieres-details div {
+#accueil-dernieres-parutions .accueil-dernieres-details div {
   display: flex;
   flex-direction: column;
 }
@@ -224,8 +224,11 @@ header .accueil-head-photo .accueil-head-photo-gf {
 *
 *********************/
 @media screen and (max-width: 1200px) {
-  #accueil-avenir .carte-oeuvre .accueil-avenir-details {
+  #accueil-avenir .accueil-carte-oeuvre .accueil-avenir-details {
     padding: 20px;
+  }
+  #accueil-bio .accueil-bio-txt {
+    right: 20px;
   }
 }
 
@@ -233,7 +236,7 @@ header .accueil-head-photo .accueil-head-photo-gf {
   header .accueil-head-photo {
     height: 700px;
   }
-  #accueil-avenir .carte-oeuvre .accueil-avenir-details {
+  #accueil-avenir .accueil-carte-oeuvre .accueil-avenir-details {
     padding: 20px;
   }
   header {
@@ -264,5 +267,110 @@ header .accueil-head-photo .accueil-head-photo-gf {
     font-size: 28px;
     margin-bottom: 40px;
     margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 600px;
+  }
+  header .accueil-head-nom #accueil-header-nom {
+    font-size: 120px;
+    line-height: 100px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    height: 600px;
+  }
+  header .accueil-head-nom {
+    align-self: flex-end;
+    align-items: center;
+    width: 100%;
+    padding-right: 0;
+    z-index: 90;
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+  header .accueil-head-nom #accueil-logo {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+  }
+  header .accueil-head-nom #accueil-header-nom {
+    font-size: 110px;
+    line-height: 100px;
+    margin: 10px 0;
+  }
+  header .accueil-head-nom .accueil-header-compositeur {
+    justify-self: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-right: 0px;
+  }
+  header .accueil-head-photo {
+    height: 400px;
+    width: 100%;
+  }
+  header .accueil-head-photo .accueil-head-photo-gf {
+    background-position: center;
+  }
+  .accueil-carte-oeuvre {
+    width: 100%;
+    margin: 30px 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #accueil-bio {
+    position: relative;
+    flex-direction: column;
+    margin: 100px auto;
+    height: 400px;
+  }
+  #accueil-bio .accueil-bio-photo {
+    height: 260px;
+    width: 100%;
+  }
+  #accueil-bio .accueil-bio-txt {
+    width: calc(100% - 40px);
+    padding: 20px;
+    top: initial;
+    bottom: 0;
+    transform: translateY(0);
+  }
+  #accueil-bio .accueil-bio-txt img {
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    margin-top: -35px;
+  }
+  #accueil-bio .accueil-bio-txt p {
+    font-size: 16px;
+    line-height: 40px;
+  }
+  #accueil-bio .accueil-bio-txt a {
+    font-size: 16px;
+    align-self: flex-end;
+  }
+  #accueil-infolettre {
+    margin: 100px 0;
+  }
+  #accueil-infolettre .accueil-infolettre-form {
+    width: 500px;
+    margin: 10px;
+  }
+  #accueil-infolettre .accueil-infolettre-form .accueil-infolettre-input {
+    flex: 2;
+  }
+  #accueil-infolettre .accueil-infolettre-form .accueil-infolettre-input #email-newsletter {
+    width: 100%;
+  }
+  #accueil-infolettre .accueil-infolettre-form .accueil-infolettre-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  #accueil-dernieres-parutions .accueil-derniere-disco {
+    font-size: 18px;
   }
 }

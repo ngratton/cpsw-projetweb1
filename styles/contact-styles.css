@@ -30,6 +30,19 @@ main p {
   margin-left: 20px;
 }
 
+.contact-infolettre-form {
+  width: 500px;
+  margin: 10px;
+}
+
+.contact-infolettre-form .contact-infolettre-input {
+  flex: 1;
+}
+
+.contact-infolettre-form .contact-infolettre-input #email-newsletter {
+  width: calc(100% - 20px);
+}
+
 .contact-agence {
   display: flex;
   flex-direction: column;
@@ -42,3 +55,20 @@ main p {
 *   MEDIA QUERIES
 *
 *********************/
+@media screen and (max-width: 576px) {
+  .contact-infolettre-form {
+    width: 500px;
+    margin: 10px;
+  }
+  .contact-infolettre-form .contact-infolettre-input {
+    flex: 2;
+  }
+  .contact-infolettre-form .contact-infolettre-input #email-newsletter {
+    width: 100%;
+  }
+  .contact-infolettre-form .contact-infolettre-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}

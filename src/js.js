@@ -18,6 +18,35 @@ export default class App {
 				window.location.href = './';
 			});
 		}
+
+		this.navHam = document.querySelector("#nav-hamburger");
+			this.navHam.addEventListener("click", e => {
+				this.menuNav();
+			});
+	}
+
+	static menuNav() {
+		document.body.style.boxShadow = "0px 5px 30px rgba(0,0,0,0.5)";
+		var close = document.querySelector("#nav-hamclose");
+		this.navHam.classList.add("hidden");
+		document.querySelector("#nav-hamclose").classList.remove("hidden");
+		document.querySelector("#nav-logo-menu").classList.remove("hidden");
+		document.querySelector("#nav-liens").style.right = "-250px";
+		document.body.classList.add("nav-slide-in");
+
+		close.addEventListener("click", e => {
+			this.navHam.classList.remove("hidden");
+			document.body.classList.remove("nav-slide-in");
+			document.body.classList.add("nav-slide-out");
+			document.querySelector("#nav-hamclose").classList.add("hidden");
+			document.querySelector("#nav-logo-menu").classList.add("hidden");
+			document.querySelector("#nav-liens").style.right = "0";
+
+			window.setTimeout(() => {
+				document.body.classList.remove("nav-slide-out");
+			}, 300);
+
+		});
 	}
 
 	/**

@@ -76,5 +76,10 @@ header {
 //##################################
 
 @media screen and (max-width: 576px) {
-    
+
+    #bio {
+        .bio-liste-reconnaissances {
+            padding: 0;
+        }
+    }
 }

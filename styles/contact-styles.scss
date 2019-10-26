@@ -32,6 +32,19 @@ main {
     }
 }
 
+.contact-infolettre-form {
+    width: 500px;
+    margin: 10px;
+
+    .contact-infolettre-input {
+        flex: 1;
+
+        #email-newsletter {
+            width: calc(100% - 20px);
+        }
+    }
+} 
+
 .contact-agence {
     display: flex;
     flex-direction: column;
@@ -59,5 +72,24 @@ main {
 }
 
 @media screen and (max-width: 576px) {
-    
+
+    .contact-infolettre-form {
+        width: 500px;
+        margin: 10px;
+        // align-items: center;
+
+        .contact-infolettre-input {
+            flex: 2;
+
+            #email-newsletter {
+                width: 100%;
+            }
+        }
+
+        .contact-infolettre-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    } 
 }

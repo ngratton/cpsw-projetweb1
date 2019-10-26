@@ -38,13 +38,13 @@ section {
 section .musique-affichage-oeuvre {
   display: flex;
   flex-wrap: wrap;
-  transition: flex .3s ease-out;
 }
 
 section .carte-oeuvre {
-  width: 360px;
+  flex: 0 0 370px;
   background-color: white;
-  margin-right: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
   margin-bottom: 40px;
   transition: box-shadow .2s ease-out;
 }
@@ -55,7 +55,7 @@ section .carte-oeuvre:hover {
 }
 
 section .carte-oeuvre .oeuvre-couverture {
-  height: 380px;
+  height: 370px;
 }
 
 section .carte-oeuvre .oeuvre-couverture .couverture-380 {
@@ -82,6 +82,7 @@ section .carte-oeuvre .oeuvre-details a {
 
 .avenir-couverture {
   height: 280px;
+  flex: 0 1 280px;
 }
 
 .avenir-couverture .couverture-280 {
@@ -154,10 +155,10 @@ section .carte-oeuvre .oeuvre-details a {
     margin-bottom: 100px;
   }
   section .carte-oeuvre {
-    width: 240px;
+    flex: 0 1 20em;
   }
   section .carte-oeuvre .oeuvre-couverture {
-    height: 280px;
+    height: 20em;
   }
   section .carte-oeuvre .oeuvre-details {
     padding: 20px;
@@ -182,10 +183,10 @@ section .carte-oeuvre .oeuvre-details a {
     margin-bottom: 100px;
   }
   section .carte-oeuvre {
-    width: 260px;
+    flex: 0 0 16em;
   }
   section .carte-oeuvre .oeuvre-couverture {
-    height: 380px;
+    height: 16em;
   }
   section .carte-oeuvre .oeuvre-details {
     padding: 20px;
@@ -206,16 +207,38 @@ section .carte-oeuvre .oeuvre-details a {
     margin-bottom: 100px;
   }
   section .carte-oeuvre {
-    max-width: 380px;
+    flex: 1 0 260px;
   }
   section .carte-oeuvre .oeuvre-couverture {
-    height: 380px;
+    height: 260px;
   }
   section .carte-oeuvre .oeuvre-details {
     padding: 20px;
   }
   section .carte-oeuvre .oeuvre-details a {
     justify-self: flex-end;
+  }
+  .carte-large .oeuvre-details div:nth-child(1) {
+    flex-direction: column;
+  }
+  .oeuvre-type {
+    color: #7DBBC9;
+    font-size: 16px;
+  }
+  .oeuvre-date {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .oeuvre-titre {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .oeuvre-etiquette {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .oeuvre-cta {
+    font-size: 24px;
   }
 }
 
@@ -227,8 +250,7 @@ section .carte-oeuvre .oeuvre-details a {
     margin-bottom: 100px;
   }
   section .carte-oeuvre {
-    flex: 1;
-    max-width: 150px;
+    flex: 1 1 260px;
     margin-right: 10px;
   }
   section .carte-oeuvre .oeuvre-couverture {

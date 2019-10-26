@@ -17,11 +17,16 @@
         <div class="conteneur">
             <img src="./img/nav-logo.png" alt="Gabriel Forion - compositeur" id="nav-logo">
             <div id="nav-liens">
+                <img id="nav-hamclose" src="./img/icons/close.svg" class="hidden">
+                <img src="./img/nav-logo.png" alt="Gabriel Forion - compositeur" id="nav-logo-menu" class="hidden">
                 <a href="./">Accueil</a>
                 <a href="biographie.html">Biographie</a>
                 <a href="musique.html">Musique</a>
                 <a href="contact.html">Contact</a>
             </div>
+        </div>
+        <div id="nav-hamburger">
+            <img src="./img/nav-hamburger.png" alt="">
         </div>
     </nav>
     <header>
@@ -49,7 +54,7 @@
         <section id="accueil-avenir" class="conteneur">
             <h2>À VENIR</h2>
             <div class="flex">
-                <div class="flex-2x1 flex carte-oeuvre">
+                <div class="flex-2x1 flex-conteneur accueil-carte-oeuvre">
                     <div class="accueil-avenir-couverture">
                         <a href="#">
                             <div class="couverture-280" style="background-image: url('./img/musique/AlexJoset.png')"></div>
@@ -65,7 +70,7 @@
                         <a class="accueil-oeuvre-cta" href="#">Billets ></a>
                     </div>
                 </div>
-                <div class="flex-2x1 flex carte-oeuvre">
+                <div class="flex-2x1 flex-conteneur accueil-carte-oeuvre">
                     <div class="accueil-avenir-couverture">
                         <a href="#">
                             <div class="couverture-280" style="background-image: url('./img/musique/AlexJoset.png')"></div>
@@ -91,15 +96,19 @@
                 </p>
                 <div class="flex-centre">
                     <form action="#" method="post" class="flex accueil-infolettre-form">
-                        <input type="text" name="email-newsletter" id="email-newsletter" placeholder="Courriel...">
-                        <button class="btn btn-dore"><a href="#">S'abonner</a></button>
+                        <div class="accueil-infolettre-input">
+                            <input type="text" name="email-newsletter" id="email-newsletter" placeholder="Courriel...">
+                        </div>
+                        <div class="accueil-infolettre-btn">
+                            <button class="btn btn-dore"><a href="#">S'abonner</a></button>
+                        </div>
                     </form>
                 </div>
             </div>
         </section>
         <section id="accueil-dernieres-parutions" class="conteneur">
                 <div class="flex">
-                    <div class="flex-2x1 flex carte-oeuvre">
+                    <div class="flex-2x1 flex-conteneur accueil-carte-oeuvre">
                         <div class="accueil-dernieres-couverture">
                             <a href="#">
                                 <div class="couverture-280" style="background-image: url('./img/musique/AlexJoset.png')"></div>
@@ -114,7 +123,7 @@
                             <a class="accueil-oeuvre-cta" href="#">Billets ></a>
                         </div>
                     </div>
-                    <div class="flex-2x1 flex carte-oeuvre">
+                    <div class="flex-2x1 flex-conteneur accueil-carte-oeuvre">
                         <div class="accueil-dernieres-couverture">
                             <a href="#">
                                 <div class="couverture-280" style="background-image: url('./img/musique/AlexJoset.png')"></div>

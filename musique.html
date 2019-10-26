@@ -11,17 +11,26 @@
 		import App from "./src/js.js";
 		App.load().then(() => App.main());
 	</script>
+	<script type="module">
+		import Musiquepage from "./src/musique-js.js";
+		Musiquepage.load().then(() => Musiquepage.main());
+	</script>
 </head>
 <body>
     <nav>
         <div class="conteneur">
             <img src="./img/nav-logo.png" alt="Gabriel Forion - compositeur" id="nav-logo">
             <div id="nav-liens">
+                <img id="nav-hamclose" src="./img/icons/close.svg" class="hidden">
+                <img src="./img/nav-logo.png" alt="Gabriel Forion - compositeur" id="nav-logo-menu" class="hidden">
                 <a href="./">Accueil</a>
                 <a href="biographie.html">Biographie</a>
                 <a href="musique.html">Musique</a>
                 <a href="contact.html">Contact</a>
             </div>
+        </div>
+        <div id="nav-hamburger">
+            <img src="./img/nav-hamburger.png" alt="">
         </div>
     </nav>
     <header>
@@ -292,20 +301,7 @@
                 <h2>SIMPLES</h2>
                 <div class="musique-affichage-oeuvre">
 
-                    <div class="carte-oeuvre">
-                        <div class="oeuvre-couverture">
-                            <a href="#">
-                                <div class="couverture-380" style="background-image: url('./img/musique/MadamRazzal.png')"></div>
-                            </a>
-                        </div>
-                        <div class="oeuvre-details">
-                            <div>
-                                <span class="oeuvre-titre">Titre</span>
-                                <span class="oeuvre-etiquette">Étiquette</span>
-                            </div>
-                            <a class="oeuvre-cta" href="#">Voir l'album ></a>
-                        </div>
-                    </div>
+                    
                     <div class="carte-oeuvre">
                         <div class="oeuvre-couverture">
                             <a href="#">

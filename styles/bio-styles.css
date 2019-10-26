@@ -44,3 +44,9 @@ header {
     margin-bottom: 5px;
   }
 }
+
+@media screen and (max-width: 576px) {
+  #bio .bio-liste-reconnaissances {
+    padding: 0;
+  }
+}

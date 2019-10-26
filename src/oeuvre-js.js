@@ -1,8 +1,8 @@
 /*jslint esnext:true, browser:true*/
 /**
- * @module App
+ * @module Oeuvrepage
  */
-export default class App {
+export default class Oeuvrepage {
 	/**
 	 * Méthode principale. Sera typiquement appelée après le chargement de la page.
 	 */
@@ -24,10 +24,8 @@ export default class App {
 
 	static demarrerAudio() {
 		var btnPlay = document.querySelector("#btn-play");
-		var pisteTemps = document.querySelector(".piste-temps");
 		var lecteurAudio = document.querySelector("#lecteur-audio");
 		btnPlay.parentNode.removeChild(btnPlay);
-		pisteTemps.parentNode.removeChild(pisteTemps);
 		lecteurAudio.removeAttribute("hidden");
 		lecteurAudio.autoplay = true;
 		lecteurAudio.play();

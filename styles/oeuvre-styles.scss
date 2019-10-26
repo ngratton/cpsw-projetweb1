@@ -210,10 +210,15 @@ header {
     font-size: 18px;
 
     .piste-temps-play {
-        // flex: 1;
+        flex: 1;
         display: flex;
         align-items: center;
+        justify-content: flex-end;
         height: 40px;
+
+        .piste-temps {
+            margin-right: 10px;
+        }
 
         .piste-play {
             display: flex;
@@ -237,6 +242,7 @@ header {
 
         audio {
             height: 40px;
+            width: 100px;
             outline: none;
             // transition: all .2s ease-out;
         }
@@ -273,13 +279,76 @@ header {
 }
 
 @media screen and (max-width: 992px) {
-
+    h1 {
+        font-size: 100px;
+        top: 135px;
+    }
 }
     
 @media screen and (max-width: 768px) {
-
+    .oeuvre-presentation {
+        position: relative;
+        margin-bottom: 0;
+    
+        .oeuvre-art {
+            display: flex;
+            // flex-direction: column;
+            align-items: center;
+    
+            img {
+                width: 100%;
+            }
+        }
+    
+        .oeuvre-desc {
+            position: relative;
+            // width: calc(50% + 40px);
+            width: 100%;
+            right: 0;
+            top: -40px;
+            background-color: rgba(255,255,255,0.75);
+            padding-left: 20px;
+    
+            .oeuvre-type-container {
+                margin: 40px 0;
+            }
+    
+            .oeuvre-desc-container {
+                margin-bottom: 20px;
+                .oeuvre-desc-tag {
+                    font-size: 18px;
+                    color: $couleur-dore;
+                }
+    
+                .oeuvre-desc-value {
+                    font-size: 18px;
+                    margin-left: 30px;
+                }
+            }
+    
+            .oeuvre-desc-txt {
+                margin-top: 40px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 576px) {
     
+    .oeuvre-filariane {
+        font-size: 12px;
+        margin: 78px 0 20px 0;
+
+        .filariane-fleche {
+            margin: 0 5px;
+        }
+    }
+
+    .oeuvre-stores {
+        flex-direction: column;
+
+        a {
+            max-width: 12em;
+        }
+    }
 }
