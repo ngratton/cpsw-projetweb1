@@ -2,15 +2,6 @@ header {
     background-image: url('../img/contact-header-bg.jpg');
 }
 
-.contact-social-g {
-    flex: 3;
-    align-self: flex-start;
-
-    p {
-        margin: 0;
-    }
-}
-
 main {
     p {
         font-size: 24px;
@@ -19,6 +10,16 @@ main {
 
 .contact-rs {
     margin-bottom: 60px;
+    display: flex;
+}
+
+.contact-social-g {
+    flex: 3;
+    align-self: flex-start;
+
+    p {
+        margin: 0;
+    }
 }
 
 .contact-social-d {
@@ -58,18 +59,34 @@ main {
 *
 *********************/
 
-
-@media screen and (max-width: 1200px) {
-
-}
-
-@media screen and (max-width: 992px) {
-
-}
-    
+ 
+//##################################
+//###########   768 PX   ########### 
+//##################################
+   
 @media screen and (max-width: 768px) {
+    .contact-rs {
+        display: flex;
+        flex-direction: column;
+    }
 
+    .contact-social-g {
+        align-self: flex-start;
+    }
+    
+    .contact-social-d {
+        justify-content: center;
+        margin-top: 30px;
+    
+        img {
+            margin: 10px;
+        }
+    }
 }
+
+//##################################
+//###########   576 PX   ########### 
+//##################################
 
 @media screen and (max-width: 576px) {
 
