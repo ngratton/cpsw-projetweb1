@@ -1,10 +1,22 @@
+<?php
+
+session_start();
+
+if ($_SESSION["estConnecte"] != true) {
+    echo "<span class='txt_rouge'>Accès refusé.</span>";
+    // sleep(2);
+    header("location:connexion.php");
+}
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Connexion | Administration | Gabriel Forion - compositeur</title>
+    <title>Administration | Gabriel Forion - compositeur</title>
     <link rel="stylesheet" href="../styles/admin-styles.min.css">
 </head>
 <body>
@@ -93,20 +105,20 @@
                                                     <span class="item-date">28 octobre 2019</span>
                                                 </div>
                                                 <div class="item-details-options">
-                                                    <div>
-                                                        <a href="#" id="svg-voir-page">
+                                                    <div class="svg-voir-page">
+                                                        <a href="#">
                                                             <span>Voir la page en ligne</span>
                                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zM7.88 7.88l-3.54 7.78 7.78-3.54 3.54-7.78-7.78 3.54zM10 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
                                                         </a>
                                                     </div>
-                                                    <div>
-                                                        <a href="#" id="svg-modifier">
+                                                    <div id="svg-modifier">
+                                                        <a href="#">
                                                             <span>Modifier</span>
                                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.3 3.7l4 4L4 20H0v-4L12.3 3.7zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z"/></svg>
                                                         </a>
                                                     </div>
-                                                    <div>
-                                                        <a href="#" id="svg-supprimer">
+                                                    <div id="svg-supprimer">
+                                                        <a href="#">
                                                             <span>Supprimer</span>
                                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/></svg>
                                                         </a>

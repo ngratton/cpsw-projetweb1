@@ -441,6 +441,10 @@ footer div .logo-admin {
   justify-content: center;
 }
 
+.flex-plein-centre {
+  display: flex;
+}
+
 .marge-60 {
   margin: 60px 0;
 }
@@ -454,6 +458,7 @@ footer div .logo-admin {
   font-family: minion-pro, serif;
   font-size: 16px;
   cursor: pointer;
+  border-radius: 0;
 }
 
 .btn a {
@@ -514,7 +519,8 @@ input {
   outline: none;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   background-color: #DCE2E8;
   border: 1px solid #DCE2E8;
   color: #262C2D;
@@ -525,7 +531,8 @@ input[type="text"] {
   transition: border .2s ease;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
   border: 1px solid #7DBBC9;
 }
 
@@ -625,7 +632,7 @@ input[type="submit"] {
   }
   nav #nav-liens {
     position: absolute;
-    width: 300px;
+    width: 200px;
     top: 10px;
     flex-direction: column;
     align-items: flex-end;

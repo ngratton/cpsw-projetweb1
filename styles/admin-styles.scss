@@ -1,0 +1,377 @@
+/****************
+*
+*   VARIABLES
+*
+*****************/
+
+$couleur-dore: #946F2B;
+$couleur-turquoise: #7DBBC9;
+$couleur-gris-fonce: #262C2D;
+$couleur-gris-pale: #DCE2E8;
+
+$font-header: Arial, Helvetica, sans-serif;
+$font-body: Arial, Helvetica, sans-serif;
+
+
+/*************************************/
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: $couleur-gris-fonce;
+    font-family: $font-body;
+}
+
+h1 {
+    font-style: italic;
+}
+
+h3 {
+    margin: 0;
+}
+
+.conteneur {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main {
+    background-color: $couleur-gris-pale;
+    padding: 30px;
+}
+
+
+// ****************************
+// *******  UTILITAIRES *******
+// ****************************
+
+.flex {
+    display: flex;
+}
+
+.flex-l-3quart {
+    flex: 3;
+    margin-right: 30px;
+}
+
+.flex-r-1quart {
+    flex: 1;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    svg {
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.btn-add {
+    background-color: $couleur-turquoise;
+    color: white;
+
+    svg {
+        fill: white;
+    }
+
+    &:hover {
+        background-color: $couleur-dore;
+    }
+}
+
+// ############################
+// ########  CONNEXION ########
+// ############################
+
+
+.admin-connexion-accueil {
+    height: 100vh;
+}
+
+#admin-connexion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40em;
+
+    h4 {
+        margin: 30px 0;
+    }
+
+    #admin-connect-form {
+        width: 16em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        input {
+            flex: 0 0 40px;
+            margin: 10px 0;
+            height: 50px;
+            // align-self: flex-start;
+        }
+
+        .btn {
+            margin: 10px 0;
+        }
+    }
+}
+
+
+
+// ############################
+// ########    NAV     ########
+// ############################
+
+nav {
+    color: $couleur-gris-pale;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 0;
+
+    a {
+        color: $couleur-turquoise;
+        text-decoration: none;
+        
+        &:hover {
+            color:#946F2B;
+        }
+    }
+    
+
+    .logo-title {
+        display: flex;
+
+        img {
+            align-self: center;
+        }
+
+        h1 {
+            margin-left: 30px;
+        }
+    }
+
+    .user-profil {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+
+        svg {
+            height: 40px;
+            margin: 10px;
+
+            path {
+                fill: $couleur-dore;
+            }
+        }
+
+        .user-name-logout {
+            display: flex;
+            flex-direction: column;
+
+            span,
+            a {
+                margin: 5px;
+            }
+        }
+    }
+}
+
+// ############################
+// ########  ACCUEIL   ########
+// ############################
+
+#admin-accueil {
+
+    .admin-accueil-tableau {
+        margin-bottom: 60px;
+
+        .admin-accueil-table-header {
+            background-color: $couleur-gris-fonce;
+            color: white;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+    
+            div {
+                display: flex;
+    
+                svg {
+                    height: 20px;
+                    margin-right: 10px;
+        
+                    path {
+                        fill: $couleur-dore;
+                    }
+                }
+            
+            }
+        }
+
+        .admin-accueil-table-items {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+
+            .admin-accueil-table-item {
+                padding: 20px;
+                flex: 0;
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid $couleur-gris-pale;
+                
+                img {
+                    width: 90px;
+                    align-self: flex-start;
+                }
+
+                .item-details {
+                    padding-left: 20px;
+                    flex: 1;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+
+                    .item-details-infos {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 90px;
+
+                        .item-type {
+                            color: hsl(0, 0, 39);
+                            font-size: 12px;
+                        }
+                        .item-titre {
+                            font-size: 24px;
+                            font-weight: 600;
+                        }
+                        .item-date {
+                            color: hsl(0, 0, 39);
+                            font-size: 12px;
+                        }
+                    }
+
+                    .item-details-options {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 90px;
+
+                        div {
+                            display: flex;
+                            justify-content: flex-end;
+                            
+                            a {
+                                display: flex;
+                                align-items: center;
+                                text-decoration: none;
+                                color: hsl(0, 0, 60);
+                                font-size: 12px;
+                            }
+
+                            svg {
+                                height: 20px;
+                                margin-left: 10px;
+
+                                path {
+                                    fill: hsl(0, 0, 39);
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        .admin-accueil-users {
+            padding: 20px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+
+            div {
+                margin: 10px 0;
+                a {
+                    display: flex;
+                    align-items: center;
+                    color: $couleur-gris-fonce;
+                    text-decoration: none;
+                    font-size: 14px;
+
+                    &:hover {
+                        color: $couleur-dore;
+
+                        svg {
+                            path {
+                                fill: $couleur-dore;
+                            }
+                        }
+                    }
+                }
+
+                svg {
+                    height: 20px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+.svg-voir-page {
+    &:hover {
+        a {
+            span {
+                color: darkblue;
+            }
+            svg {
+                path { 
+                    fill: darkblue; 
+                } 
+            }
+        }  
+    }
+} 
+
+#svg-modifier { 
+    &:hover { 
+        color: darkorange;
+
+        svg {
+            path { 
+                fill: orange; 
+            } 
+        }
+    } 
+}
+
+#svg-supprimer { 
+    &:hover { 
+        color: darkred;
+        path { 
+            fill: darkred; 
+        } 
+    } 
+}
