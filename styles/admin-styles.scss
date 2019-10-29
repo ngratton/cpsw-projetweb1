@@ -29,6 +29,10 @@ h1 {
     font-style: italic;
 }
 
+h2 {
+    margin: 10px 0;
+}
+
 h3 {
     margin: 0;
 }
@@ -43,6 +47,9 @@ main {
     padding: 30px;
 }
 
+a > button {
+    text-decoration: none;
+}
 
 // ****************************
 // *******  UTILITAIRES *******
@@ -59,6 +66,27 @@ main {
 
 .flex-r-1quart {
     flex: 1;
+}
+
+.flex-l-2tiers {
+    flex: 2;
+    margin-right: 30px;
+}
+
+.flex-r-1tiers {
+    flex: 1;
+}
+
+.flex-2x1 {
+    flex: 1;
+    
+    &:nth-of-type(1) {
+        margin-right: 15px;
+    }
+
+    &:nth-of-type(2) {
+        margin-left: 15px;
+    }
 }
 
 .btn {
@@ -91,6 +119,51 @@ main {
     &:hover {
         background-color: $couleur-dore;
     }
+}
+
+.btn-publish {
+    background-color: $couleur-dore;
+    color: white;
+
+    svg {
+        fill: white;
+    }
+
+    &:hover {
+        background-color: $couleur-turquoise;
+    }
+}
+
+label {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+
+    span {
+        width: 150px;
+    }
+
+    input,
+    textarea,
+    select {
+        flex: 1;
+    }
+
+}
+
+.small {
+    font-size: 0.7em;
+}
+
+.notes {
+    font-size: 0.7em;
+    font-style: italic;
+    background-color: #cfcfcf;
+    padding: 5px;
+}
+
+.bold {
+    font-weight: 600;
 }
 
 // ############################
@@ -143,7 +216,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin: 10px 0;
-    padding: 0;
+    padding: 0 10px;
 
     a {
         color: $couleur-turquoise;
@@ -211,6 +284,10 @@ nav {
             justify-content: space-between;
             align-items: center;
             height: 60px;
+
+            a {
+                text-decoration: none;
+            }
     
             div {
                 display: flex;
@@ -346,18 +423,23 @@ nav {
             span {
                 color: darkblue;
             }
-            svg {
-                path { 
-                    fill: darkblue; 
-                } 
-            }
         }  
+        
+        svg {
+            path { 
+                fill: darkblue; 
+            } 
+        }
     }
 } 
 
 #svg-modifier { 
     &:hover { 
-        color: darkorange;
+        a {
+            span {
+                color: darkorange;
+            }
+        }
 
         svg {
             path { 
@@ -369,9 +451,338 @@ nav {
 
 #svg-supprimer { 
     &:hover { 
-        color: darkred;
-        path { 
-            fill: darkred; 
-        } 
+        a {
+            span {
+                color: darkred;
+            }
+        }
+
+        svg {
+            path { 
+                fill: darkred; 
+            } 
+        }
     } 
+}
+
+// ############################
+// ######  AJOUT OEUVRE  ######
+// ############################
+
+
+.admin-ajoutoeuvre-titre-btn {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#admin-ajoutoeuvre {
+    
+    input[type="text"],
+    textarea,
+    input[type="date"],
+    input[type="file"],
+    input[type="number"],
+    select {
+        border: 1px solid $couleur-gris-pale;
+        border-bottom: 1px solid $couleur-turquoise;
+        background-color: $couleur-gris-pale;
+        padding: 5px 10px;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $couleur-turquoise;
+        }
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="file"],
+    input[type="number"],
+    select {
+        height: 30px;
+    }
+
+    .admin-ajoutoeuvre-tableau {
+        margin-bottom: 30px;
+
+        .admin-ajoutoeuvre-table-header {
+            background-color: $couleur-gris-fonce;
+            color: white;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+    
+            div {
+                display: flex;
+    
+                svg {
+                    height: 20px;
+                    margin-right: 10px;
+        
+                    path {
+                        fill: $couleur-dore;
+                    }
+                }
+            
+            }
+        }
+
+        .admin-ajoutoeuvre-table-form {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            padding: 20px;
+
+            .admin-ajoutoeuvre-details {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .admin-ajout-oeuvre-desc {
+                label {
+                    span {
+                        align-self: flex-start;
+                    }
+                }
+            }
+        }
+
+        .admin-ajoutoeuvre-services {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                font-size: 12px;
+            }
+
+            label {
+                span {
+                    width: 100px;
+                }
+            }
+        }
+
+        .oeuvre-piste {
+            width: 100%;
+            padding: 0;
+            margin: 10px 0;
+
+            .oeuvre-pistes-no {
+                margin: 0 10px;
+             }
+            .oeuvre-pistes-titre {
+                width: 200px;
+                margin: 0 10px;
+            }
+            .oeuvre-pistes-temps { 
+                width: 150px;
+                margin: 0 10px;
+
+                input[type="text"] {
+                    width: 50px;
+                }
+            }
+            .oeuvre-pistes-fichier { 
+                width: 150px;
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+
+// ############################
+// ######  UTILISATEURS  ######
+// ############################
+
+
+.admin-users-titre-btn {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#admin-utilisateurs {
+
+    input[type="text"],
+    textarea,
+    input[type="date"],
+    input[type="file"],
+    input[type="number"],
+    select,
+    input[type="email"] {
+        border: 1px solid $couleur-gris-pale;
+        border-bottom: 1px solid $couleur-turquoise;
+        background-color: $couleur-gris-pale;
+        padding: 5px 10px;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $couleur-turquoise;
+        }
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="file"],
+    input[type="number"],
+    select,
+    input[type="email"] {
+        height: 30px;
+    }
+
+    .admin-users-tableau {
+        margin-bottom: 30px;
+
+        .admin-users-table-header {
+            background-color: $couleur-gris-fonce;
+            color: white;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+    
+            div {
+                display: flex;
+    
+                svg {
+                    height: 20px;
+                    margin-right: 10px;
+        
+                    path {
+                        fill: $couleur-dore;
+                    }
+                }
+            
+            }
+        }
+
+        .admin-users-table-items {
+            padding: 20px;
+            background-color: white;
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+
+                thead {
+                    background-color: rgba(125, 187, 201, 0.342);
+                    
+                    th {
+                        padding: 10px;
+
+                        &:nth-of-type(1) { width: 150px; }
+                        &:nth-of-type(2) { width: 100px; }
+                        &:nth-of-type(3) { width: 100px; }
+                        // &:nth-of-type(4) { width: 100px; }
+                        // &:nth-of-type(5) { width: 100px; }
+                        &:nth-of-type(6) { width: 80px; }
+                        &:nth-of-type(7) { width: 80px; }
+                    }
+                }
+
+                tr {
+                    &:nth-of-type(2n) {
+                        background-color: rgba(220, 226, 232, 0.466);
+                    }
+
+                    &:hover {
+                        background-color: #efefef;
+                    }
+
+                    td {
+                        text-align: center;
+                        padding: 10px;
+
+                        img {
+                            width: 70px;
+                        }
+
+                        a {
+                            svg {
+                                height: 20px;
+    
+                                path {
+                                    fill: $couleur-gris-fonce;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .admin-users-table-form {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            padding: 20px;
+
+            .admin-users-details {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .admin-ajout-oeuvre-desc {
+                label {
+                    span {
+                        align-self: flex-start;
+                    }
+                }
+            }
+        }
+
+        .admin-users-services {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                font-size: 12px;
+            }
+
+            label {
+                span {
+                    width: 100px;
+                }
+            }
+        }
+
+        .oeuvre-piste {
+            width: 100%;
+            padding: 0;
+            margin: 10px 0;
+
+            .oeuvre-pistes-no {
+                margin: 0 10px;
+             }
+            .oeuvre-pistes-titre {
+                width: 200px;
+                margin: 0 10px;
+            }
+            .oeuvre-pistes-temps { 
+                width: 150px;
+                margin: 0 10px;
+
+                input[type="text"] {
+                    width: 50px;
+                }
+            }
+            .oeuvre-pistes-fichier { 
+                width: 150px;
+                margin: 0 10px;
+            }
+        }
+    }
 }
