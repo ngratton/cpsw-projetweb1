@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-    margin: 10px 0;
+    margin: 10px 0 20px 0;
 }
 
 h3 {
@@ -75,6 +75,15 @@ a > button {
 
 .flex-r-1tiers {
     flex: 1;
+}
+
+.flex-l-1tiers {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.flex-r-2tiers {
+    flex: 2;
 }
 
 .flex-2x1 {
@@ -158,8 +167,9 @@ label {
 .notes {
     font-size: 0.7em;
     font-style: italic;
-    background-color: #cfcfcf;
+    background-color: rgba(220, 226, 232, 0.541);
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 .bold {
@@ -254,6 +264,11 @@ nav {
             }
         }
 
+        img {
+            height: 40px;
+            margin: 10px;
+        }
+
         .user-name-logout {
             display: flex;
             flex-direction: column;
@@ -273,7 +288,7 @@ nav {
 #admin-accueil {
 
     .admin-accueil-tableau {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
 
         .admin-accueil-table-header {
             background-color: $couleur-gris-fonce;
@@ -351,12 +366,13 @@ nav {
                     .item-details-options {
                         display: flex;
                         flex-direction: column;
-                        justify-content: space-between;
+                        justify-content: flex-start;
                         height: 90px;
 
                         div {
                             display: flex;
                             justify-content: flex-end;
+                            margin-bottom: 15px;
                             
                             a {
                                 display: flex;
@@ -374,6 +390,57 @@ nav {
                                     fill: hsl(0, 0, 39);
                                 }
                             }
+                        }
+
+                        .svg-voir-page {
+                            &:hover {
+                                a {
+                                    span {
+                                        color: darkblue;
+                                    }
+                        
+                                    svg {
+                                        path { 
+                                            fill: darkblue; 
+                                        } 
+                                    }
+                                }  
+                                
+                            }
+                        } 
+                        
+                        .svg-modifier { 
+                            &:hover { 
+                                a {
+                                    span {
+                                        color: darkorange;
+                                    }
+                        
+                                    svg {
+                                        path { 
+                                            fill: orange; 
+                                        } 
+                                    }
+                                }
+                        
+                            } 
+                        }
+                        
+                        .svg-supprimer { 
+                            &:hover { 
+                                a {
+                                    span {
+                                        color: darkred;
+                                    }
+                                    
+                                    svg {
+                                        path { 
+                                            fill: darkred; 
+                                        } 
+                                    }
+                                }
+                        
+                            } 
                         }
                     }
                 }
@@ -417,54 +484,6 @@ nav {
     }
 }
 
-.svg-voir-page {
-    &:hover {
-        a {
-            span {
-                color: darkblue;
-            }
-        }  
-        
-        svg {
-            path { 
-                fill: darkblue; 
-            } 
-        }
-    }
-} 
-
-#svg-modifier { 
-    &:hover { 
-        a {
-            span {
-                color: darkorange;
-            }
-        }
-
-        svg {
-            path { 
-                fill: orange; 
-            } 
-        }
-    } 
-}
-
-#svg-supprimer { 
-    &:hover { 
-        a {
-            span {
-                color: darkred;
-            }
-        }
-
-        svg {
-            path { 
-                fill: darkred; 
-            } 
-        }
-    } 
-}
-
 // ############################
 // ######  AJOUT OEUVRE  ######
 // ############################
@@ -477,6 +496,34 @@ nav {
     justify-content: space-between;
 }
 
+.admin-ajoutoeuvre-etapes {
+    display: flex;
+    margin-bottom: 20px;
+    height: 40px;
+
+    .etapes-etape {
+        flex: 1;
+        text-align: center;
+        background-color: $couleur-gris-fonce;
+        font-weight: 600;
+        color: white;
+        line-height: 40px;
+    }
+
+    .etapes-ajout {
+        flex: 2;
+        text-align: center;
+        background-color: $couleur-turquoise;
+        line-height: 40px;
+        opacity: 0.5;
+    }
+
+    .actif {
+        opacity: 1;
+        font-weight: 600;
+    }
+}
+
 #admin-ajoutoeuvre {
     
     input[type="text"],
@@ -484,7 +531,8 @@ nav {
     input[type="date"],
     input[type="file"],
     input[type="number"],
-    select {
+    select,
+    input[type="time"] {
         border: 1px solid $couleur-gris-pale;
         border-bottom: 1px solid $couleur-turquoise;
         background-color: $couleur-gris-pale;
@@ -500,7 +548,8 @@ nav {
     input[type="date"],
     input[type="file"],
     input[type="number"],
-    select {
+    select,
+    input[type="time"] {
         height: 30px;
     }
 
@@ -516,6 +565,10 @@ nav {
             justify-content: space-between;
             align-items: center;
             height: 60px;
+
+            a {
+                text-decoration: none;
+            }
     
             div {
                 display: flex;
@@ -569,10 +622,29 @@ nav {
             }
         }
 
+        .admin-ajoutoeuvre-resume {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;;
+
+            img {
+                width: 300px;
+            }
+
+            span {
+                font-size: 24px;
+                margin: 20px 0;
+            }
+        }
+
         .oeuvre-piste {
             width: 100%;
             padding: 0;
             margin: 10px 0;
+            display: flex;
+            align-items: center;
 
             .oeuvre-pistes-no {
                 margin: 0 10px;
@@ -610,6 +682,11 @@ nav {
     justify-content: space-between;
 }
 
+#user-photo-profil {
+    width: 150px;
+    // flex: 0 0 150px;
+}
+
 #admin-utilisateurs {
 
     input[type="text"],
@@ -618,7 +695,8 @@ nav {
     input[type="file"],
     input[type="number"],
     select,
-    input[type="email"] {
+    input[type="email"],
+    input[type="password"] {
         border: 1px solid $couleur-gris-pale;
         border-bottom: 1px solid $couleur-turquoise;
         background-color: $couleur-gris-pale;
@@ -635,7 +713,8 @@ nav {
     input[type="file"],
     input[type="number"],
     select,
-    input[type="email"] {
+    input[type="email"],
+    input[type="password"] {
         height: 30px;
     }
 
@@ -651,6 +730,10 @@ nav {
             justify-content: space-between;
             align-items: center;
             height: 60px;
+
+            a {
+                text-decoration: none;
+            }
     
             div {
                 display: flex;
@@ -681,13 +764,13 @@ nav {
                     th {
                         padding: 10px;
 
-                        &:nth-of-type(1) { width: 150px; }
-                        &:nth-of-type(2) { width: 100px; }
-                        &:nth-of-type(3) { width: 100px; }
+                        // &:nth-of-type(1) { width: 150px; }
+                        // &:nth-of-type(2) { width: 150px; }
+                        // &:nth-of-type(3) { width: 150px; }
                         // &:nth-of-type(4) { width: 100px; }
                         // &:nth-of-type(5) { width: 100px; }
+                        &:nth-of-type(5) { width: 80px; }
                         &:nth-of-type(6) { width: 80px; }
-                        &:nth-of-type(7) { width: 80px; }
                     }
                 }
 

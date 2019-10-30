@@ -44,7 +44,6 @@ if ($_SESSION["estConnecte"] != true) {
 
                                     <table>
                                         <thead>
-                                            <th>Photo</th>
                                             <th>Prénom</th>
                                             <th>Nom</th>
                                             <th>Nom d'utilisateur</th>
@@ -54,15 +53,6 @@ if ($_SESSION["estConnecte"] != true) {
                                         </thead>
                                         <?php foreach($utilisateurs as $utilisateur) { ?>
                                             <tr>
-                                                <td>
-                                                    <img src="<?php 
-                                                        if ($utilisateur['user_photo_path'] == '' || $utilisateur['user_photo_path'] == NULL) { 
-                                                            echo "../img/admin/user-solid-square.svg";
-                                                        } else {
-                                                            echo $utilisateur['user_photo_path'];
-                                                        }
-                                                    ?>" alt="<?php echo $utilisateur['username']; ?>">
-                                                </td>
                                                 <td><?php echo $utilisateur['prenom']; ?></td>
                                                 <td><?php echo $utilisateur['nom']; ?></td>
                                                 <td><?php echo $utilisateur['username']; ?></td>

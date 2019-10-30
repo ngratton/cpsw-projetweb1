@@ -16,12 +16,6 @@ function connexionUserModel($username, $password) {
 
     $login_user = mysqli_query($bdd, $sql);
 
-    // $stmt = mysqli_prepare($bdd, $sql);
-    // mysqli_stmt_bind_param($stmt, 'ss', $username, $password);
-    // mysqli_stmt_execute($stmt);
-
-    // $login_user = $stmt;
-
     if (! $login_user) { 
         echo mysqli_error($bdd);
         mysqli_close($bdd);
@@ -59,6 +53,77 @@ function afficherListeUtilisateursModel() {
     
     $resultats = mysqli_query($bdd, $sql);
     return $resultats;
+    
+    mysqli_close($bdd);
+}
+
+function ajoutUtilisateurModel($userUsername, $userPwd, $userPrenom, $userNom, $userEmail) {
+    global $bdd;
+
+    $sql = "
+            INSERT INTO users (username, password, prenom, nom, courriel)
+            VALUES  (?, ?, ?, ?, ?)
+            ";
+
+  $stmt = mysqli_prepare($bdd, $sql);
+    mysqli_stmt_bind_param(
+        $stmt, 
+        'sssss',
+        $userUsername,
+        $userPwd,
+        $userPrenom,
+        $userNom,
+        $userEmail
+    );
+    
+    mysqli_stmt_execute($stmt);
+    
+    mysqli_close($bdd);
+}
+
+function getUtilisateurModel($id) {
+    global $bdd;
+
+    $sql = "
+        SELECT * FROM users
+        WHERE id = $id
+        ";
+    
+    $resultats = mysqli_query($bdd, $sql);
+    $entree = mysqli_fetch_assoc($resultats);
+    
+    mysqli_close($bdd);
+    return $entree;
+}
+
+function modifierUtilisateurModel($userPrenom, $userNom, $userEmail, $userId) {
+    global $bdd;
+
+    $sql = "
+        UPDATE users
+        SET 
+            prenom = ?, 
+            nom = ?, 
+            courriel = ?
+        WHERE id = ?
+        ";
+
+    $stmt = mysqli_prepare($bdd, $sql);
+    mysqli_stmt_bind_param($stmt, 'sssi', $userPrenom, $userNom, $userEmail, $userId);
+    mysqli_stmt_execute($stmt);
+    
+    mysqli_close($bdd);
+}
+
+function supprimerUtilisateurModel($id) {
+    global $bdd;
+
+    $sql = "
+        DELETE FROM users
+        WHERE id = $id
+    ";
+    
+    mysqli_query($bdd, $sql);
     
     mysqli_close($bdd);
 }

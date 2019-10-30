@@ -17,7 +17,7 @@ if ($_SESSION["estConnecte"] != true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ajouter une oeuvre | Administration | Gabriel Forion - compositeur</title>
+    <title>Modifier un utilisateur | Administration | Gabriel Forion - compositeur</title>
     <link rel="stylesheet" href="../styles/admin-styles.min.css">
 </head>
 <body>
@@ -25,12 +25,12 @@ if ($_SESSION["estConnecte"] != true) {
         <?php include("./views/admin-header.php"); ?>
         <main>
             <div class="container flex-centre">
-                <form action="./ajout-utilisateur-submit.php" method="post" name="ajout-user" enctype="multipart/form-data">
+                <form action="./modifier-utilisateur-submit.php" method="post" name="ajout-user" enctype="multipart/form-data">
                 <div class="admin-users-titre-btn">
-                    <h2>Ajouter un utilisateur</h2>
+                    <h2>Modifier un utilisateur</h2>
                     <button class="btn btn-publish" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9 10V8h2v2h2v2h-2v2H9v-2H7v-2h2zm-5 8h12V6h-4V2H4v16zm-2 1V0h12l4 4v16H2v-1z"/></svg>
-                        <span class="bold">AJOUTER</span>
+                        <span class="bold">ENREGISTRER LES MODIFICATIONS</span>
                     </button>
                 </div>
                     <div class="carte" id="admin-utilisateurs">
@@ -45,27 +45,28 @@ if ($_SESSION["estConnecte"] != true) {
                                 <div class="admin-users-table-form">
                                     <div class="flex">
                                         <div class="flex-2x1 admin-users-details">
-                                            <label for="new-user-username">
+                                            <input type="text" name="user-id" id="user-id" value="<?php echo $utilisateur['id']; ?>" hidden>
+                                            <label for="user-username">
                                                 <span>Nom d'utlisateur</span>
-                                                <input type="text" name="new-user-username" id="new-user-username" required>
+                                                <input type="text" name="user-username" id="user-username" value="<?php echo $utilisateur['username']; ?>" disabled>
                                             </label>
-                                            <label for="new-user-password">
-                                                <span>Mot de passe</span>
-                                                <input type="password" name="new-user-password" id="new-user-password" required>
-                                            </label>
+                                            <!-- <label for="user-new-password">
+                                                <span class="bold">Nouveau mot de passe</span>
+                                                <input type="password" name="user-new-password" id="user-new-password" >
+                                            </label> -->
                                         </div>
                                         <div class="flex-2x1 admin-users-details">
-                                            <label for="new-user-prenom">
+                                            <label for="user-prenom">
                                                 <span>Prénom</span>
-                                                <input type="text" name="new-user-prenom" id="new-user-prenom" required>
+                                                <input type="text" name="user-prenom" id="user-prenom" value="<?php echo $utilisateur['prenom']; ?>" required>
                                             </label>
-                                            <label for="new-user-nom">
+                                            <label for="user-nom">
                                                 <span>Nom de famille</span>
-                                                <input type="text" name="new-user-nom" id="new-user-nom" required>
+                                                <input type="text" name="user-nom" id="user-nom" value="<?php echo $utilisateur['nom']; ?>" required>
                                             </label>
-                                            <label for="new-user-email">
+                                            <label for="user-email">
                                                 <span>Courriel</span>
-                                                <input type="email" name="new-user-email" id="new-user-email" required>
+                                                <input type="email" name="user-email" id="user-email" value="<?php echo $utilisateur['courriel']; ?>" required>
                                             </label>
                                         </div>
                                     </div>

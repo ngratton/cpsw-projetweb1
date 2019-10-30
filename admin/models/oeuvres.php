@@ -22,7 +22,6 @@ function ajoutOeuvreModel($oeuvreTitre, $oeuvreDate, $oeuvreEtiquette, $oeuvreTy
     global $bdd;
 
     $sql = "
-    BEGIN;
     INSERT INTO oeuvres (
         fk_types_id, 
         album_titres, 
@@ -32,8 +31,9 @@ function ajoutOeuvreModel($oeuvreTitre, $oeuvreDate, $oeuvreEtiquette, $oeuvreTy
         album_desc,  
         bandcamp_link, 
         itunes_link, 
-        amazon_link  )
-    VALUES  (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        amazon_link
+        )
+    VALUES  (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($bdd, $sql);
     mysqli_stmt_bind_param(
@@ -52,26 +52,10 @@ function ajoutOeuvreModel($oeuvreTitre, $oeuvreDate, $oeuvreEtiquette, $oeuvreTy
 
     mysqli_stmt_execute($stmt);
 
-    $sql = "SELECT LAST_INSERT_ID()";
-    
-    $resultats = mysqli_query($bdd, $sql);
-    return $resultats;
-
     mysqli_close($bdd);
 }
 
-function getLastInsertIdModel() {
-    global $bdd;
-
-    $sql = "SELECT LAST_INSERT_ID()";
-    
-    $resultats = mysqli_query($bdd, $sql);
-    return $resultats;
-    
-    mysqli_close($bdd);
-}
-
-function ajoutPistesModel($lastInserId, $pisteNoInt_1, $pisteTitre_1, $pisteTemps_1, $destinationPiste_1) {
+function ajoutPistesModel($oeuvreId, $pisteNoInt_1, $pisteTitre_1, $pisteTemps_1, $audioPistePath_1) {
     global $bdd;
 
     $sql = "
@@ -79,19 +63,22 @@ function ajoutPistesModel($lastInserId, $pisteNoInt_1, $pisteTitre_1, $pisteTemp
         fk_album_id, 
         piste_no, 
         piste_titre, 
-        piste_temps
+        piste_temps,
+        piste_audio_path
     )
-    VALUES (?, ?, ?, ?)
+    VALUES (?, ?, ?, ?, ?)
     ";
 
     $stmt = mysqli_prepare($bdd, $sql);
+
     mysqli_stmt_bind_param(
         $stmt, 
-        'iiss',
+        'iisss',
         $lastInserId,
         $pisteNoInt_1,
         $pisteTemps_1,
-        $destinationPiste_1
+        $destinationPiste_1,
+        $audioPistePath_1
     );
 
     mysqli_stmt_execute($stmt);
@@ -99,19 +86,65 @@ function ajoutPistesModel($lastInserId, $pisteNoInt_1, $pisteTitre_1, $pisteTemp
     mysqli_close($bdd);
 }
 
-function getOeuvreModifyModel($id) {
+function getPistesModifierModel($id) {
+    global $bdd;
+
+    $sql = "SELECT * FROM pistes 
+    WHERE pistes.fk_album_id = $id";
+        
+    $resultats = mysqli_query($bdd, $sql);
+    $row = mysqli_fetch_assoc($resultats);
+    
+    mysqli_close($bdd);
+    return $row;
+}
+
+function getOeuvresId() {
+    global $bdd;
+
+    $sql = "SELECT MAX(id) as 'id', album_titres FROM oeuvres";
+        
+    $resultats = mysqli_query($bdd, $sql);
+    $row = mysqli_fetch_assoc($resultats);
+    
+    return $row;
+}
+
+function getOeuvreModel($id) {
+    global $bdd;
+
+    $sql = "SELECT * FROM oeuvres 
+    WHERE oeuvres.id = $id";
+        
+    $resultats = mysqli_query($bdd, $sql);
+    $row = mysqli_fetch_assoc($resultats);
+    
+    mysqli_close($bdd);
+    return $row;
+}
+
+function getOeuvreModifierModel($id) {
+    global $bdd;
+
+    $sql = "SELECT * FROM oeuvres 
+    WHERE oeuvres.id = $id";
+        
+    $resultats = mysqli_query($bdd, $sql);
+    $row = mysqli_fetch_assoc($resultats);
+    
+    // mysqli_close($bdd);
+    return $row;
+}
+
+function supprimerOeuvreModel($id) {
     global $bdd;
 
     $sql = "
-    SELECT oeuvres.id, album_titres, album_dates, album_img_path, types.type_nom FROM oeuvres
-    INNER JOIN types
-    ON oeuvres.fk_types_id = types.id
-    INNER JOIN pistes
-    ON oeuv
+        DELETE FROM oeuvres
+        WHERE id = $id
     ";
     
-    $resultats = mysqli_query($bdd, $sql);
-    return $resultats;
+    mysqli_query($bdd, $sql);
     
     mysqli_close($bdd);
 }

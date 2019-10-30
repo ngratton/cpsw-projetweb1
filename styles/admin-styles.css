@@ -19,7 +19,7 @@ h1 {
 }
 
 h2 {
-  margin: 10px 0;
+  margin: 10px 0 20px 0;
 }
 
 h3 {
@@ -60,6 +60,15 @@ a > button {
 
 .flex-r-1tiers {
   flex: 1;
+}
+
+.flex-l-1tiers {
+  flex: 1;
+  margin-right: 30px;
+}
+
+.flex-r-2tiers {
+  flex: 2;
 }
 
 .flex-2x1 {
@@ -142,8 +151,9 @@ label select {
 .notes {
   font-size: 0.7em;
   font-style: italic;
-  background-color: #cfcfcf;
+  background-color: rgba(220, 226, 232, 0.541);
   padding: 5px;
+  margin-bottom: 10px;
 }
 
 .bold {
@@ -227,6 +237,11 @@ nav .user-profil svg path {
   fill: #946F2B;
 }
 
+nav .user-profil img {
+  height: 40px;
+  margin: 10px;
+}
+
 nav .user-profil .user-name-logout {
   display: flex;
   flex-direction: column;
@@ -238,7 +253,7 @@ nav .user-profil .user-name-logout a {
 }
 
 #admin-accueil .admin-accueil-tableau {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 #admin-accueil .admin-accueil-tableau .admin-accueil-table-header {
@@ -321,13 +336,14 @@ nav .user-profil .user-name-logout a {
 #admin-accueil .admin-accueil-tableau .admin-accueil-table-items .admin-accueil-table-item .item-details .item-details-options {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 90px;
 }
 
 #admin-accueil .admin-accueil-tableau .admin-accueil-table-items .admin-accueil-table-item .item-details .item-details-options div {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 15px;
 }
 
 #admin-accueil .admin-accueil-tableau .admin-accueil-table-items .admin-accueil-table-item .item-details .item-details-options div a {
@@ -345,6 +361,30 @@ nav .user-profil .user-name-logout a {
 
 #admin-accueil .admin-accueil-tableau .admin-accueil-table-items .admin-accueil-table-item .item-details .item-details-options div svg path {
   fill: #636363;
+}
+
+#admin-accueil .admin-accueil-tableau .admin-accueil-table-items .admin-accueil-table-item .item-details .item-details-options .svg-voir-page:hover a span {
+  color: darkblue;
+}
+
+#admin-accueil .admin-accueil-tableau .admin-accueil-table-items .admin-accueil-table-item .item-details .item-details-options .svg-voir-page:hover a svg path {
+  fill: darkblue;
+}
+
+#admin-accueil .admin-accueil-tableau .admin-accueil-table-items .admin-accueil-table-item .item-details .item-details-options .svg-modifier:hover a span {
+  color: darkorange;
+}
+
+#admin-accueil .admin-accueil-tableau .admin-accueil-table-items .admin-accueil-table-item .item-details .item-details-options .svg-modifier:hover a svg path {
+  fill: orange;
+}
+
+#admin-accueil .admin-accueil-tableau .admin-accueil-table-items .admin-accueil-table-item .item-details .item-details-options .svg-supprimer:hover a span {
+  color: darkred;
+}
+
+#admin-accueil .admin-accueil-tableau .admin-accueil-table-items .admin-accueil-table-item .item-details .item-details-options .svg-supprimer:hover a svg path {
+  fill: darkred;
 }
 
 #admin-accueil .admin-accueil-tableau .admin-accueil-users {
@@ -379,30 +419,6 @@ nav .user-profil .user-name-logout a {
   margin-right: 10px;
 }
 
-.svg-voir-page:hover a span {
-  color: darkblue;
-}
-
-.svg-voir-page:hover svg path {
-  fill: darkblue;
-}
-
-#svg-modifier:hover a span {
-  color: darkorange;
-}
-
-#svg-modifier:hover svg path {
-  fill: orange;
-}
-
-#svg-supprimer:hover a span {
-  color: darkred;
-}
-
-#svg-supprimer:hover svg path {
-  fill: darkred;
-}
-
 .admin-ajoutoeuvre-titre-btn {
   margin: 20px 0;
   display: flex;
@@ -410,12 +426,41 @@ nav .user-profil .user-name-logout a {
   justify-content: space-between;
 }
 
+.admin-ajoutoeuvre-etapes {
+  display: flex;
+  margin-bottom: 20px;
+  height: 40px;
+}
+
+.admin-ajoutoeuvre-etapes .etapes-etape {
+  flex: 1;
+  text-align: center;
+  background-color: #262C2D;
+  font-weight: 600;
+  color: white;
+  line-height: 40px;
+}
+
+.admin-ajoutoeuvre-etapes .etapes-ajout {
+  flex: 2;
+  text-align: center;
+  background-color: #7DBBC9;
+  line-height: 40px;
+  opacity: 0.5;
+}
+
+.admin-ajoutoeuvre-etapes .actif {
+  opacity: 1;
+  font-weight: 600;
+}
+
 #admin-ajoutoeuvre input[type="text"],
 #admin-ajoutoeuvre textarea,
 #admin-ajoutoeuvre input[type="date"],
 #admin-ajoutoeuvre input[type="file"],
 #admin-ajoutoeuvre input[type="number"],
-#admin-ajoutoeuvre select {
+#admin-ajoutoeuvre select,
+#admin-ajoutoeuvre input[type="time"] {
   border: 1px solid #DCE2E8;
   border-bottom: 1px solid #7DBBC9;
   background-color: #DCE2E8;
@@ -427,7 +472,8 @@ nav .user-profil .user-name-logout a {
 #admin-ajoutoeuvre input[type="date"]:focus,
 #admin-ajoutoeuvre input[type="file"]:focus,
 #admin-ajoutoeuvre input[type="number"]:focus,
-#admin-ajoutoeuvre select:focus {
+#admin-ajoutoeuvre select:focus,
+#admin-ajoutoeuvre input[type="time"]:focus {
   outline: none;
   border: 1px solid #7DBBC9;
 }
@@ -436,7 +482,8 @@ nav .user-profil .user-name-logout a {
 #admin-ajoutoeuvre input[type="date"],
 #admin-ajoutoeuvre input[type="file"],
 #admin-ajoutoeuvre input[type="number"],
-#admin-ajoutoeuvre select {
+#admin-ajoutoeuvre select,
+#admin-ajoutoeuvre input[type="time"] {
   height: 30px;
 }
 
@@ -453,6 +500,10 @@ nav .user-profil .user-name-logout a {
   justify-content: space-between;
   align-items: center;
   height: 60px;
+}
+
+#admin-ajoutoeuvre .admin-ajoutoeuvre-tableau .admin-ajoutoeuvre-table-header a {
+  text-decoration: none;
 }
 
 #admin-ajoutoeuvre .admin-ajoutoeuvre-tableau .admin-ajoutoeuvre-table-header div {
@@ -499,10 +550,29 @@ nav .user-profil .user-name-logout a {
   width: 100px;
 }
 
+#admin-ajoutoeuvre .admin-ajoutoeuvre-tableau .admin-ajoutoeuvre-resume {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#admin-ajoutoeuvre .admin-ajoutoeuvre-tableau .admin-ajoutoeuvre-resume img {
+  width: 300px;
+}
+
+#admin-ajoutoeuvre .admin-ajoutoeuvre-tableau .admin-ajoutoeuvre-resume span {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
 #admin-ajoutoeuvre .admin-ajoutoeuvre-tableau .oeuvre-piste {
   width: 100%;
   padding: 0;
   margin: 10px 0;
+  display: flex;
+  align-items: center;
 }
 
 #admin-ajoutoeuvre .admin-ajoutoeuvre-tableau .oeuvre-piste .oeuvre-pistes-no {
@@ -535,13 +605,18 @@ nav .user-profil .user-name-logout a {
   justify-content: space-between;
 }
 
+#user-photo-profil {
+  width: 150px;
+}
+
 #admin-utilisateurs input[type="text"],
 #admin-utilisateurs textarea,
 #admin-utilisateurs input[type="date"],
 #admin-utilisateurs input[type="file"],
 #admin-utilisateurs input[type="number"],
 #admin-utilisateurs select,
-#admin-utilisateurs input[type="email"] {
+#admin-utilisateurs input[type="email"],
+#admin-utilisateurs input[type="password"] {
   border: 1px solid #DCE2E8;
   border-bottom: 1px solid #7DBBC9;
   background-color: #DCE2E8;
@@ -554,7 +629,8 @@ nav .user-profil .user-name-logout a {
 #admin-utilisateurs input[type="file"]:focus,
 #admin-utilisateurs input[type="number"]:focus,
 #admin-utilisateurs select:focus,
-#admin-utilisateurs input[type="email"]:focus {
+#admin-utilisateurs input[type="email"]:focus,
+#admin-utilisateurs input[type="password"]:focus {
   outline: none;
   border: 1px solid #7DBBC9;
 }
@@ -564,7 +640,8 @@ nav .user-profil .user-name-logout a {
 #admin-utilisateurs input[type="file"],
 #admin-utilisateurs input[type="number"],
 #admin-utilisateurs select,
-#admin-utilisateurs input[type="email"] {
+#admin-utilisateurs input[type="email"],
+#admin-utilisateurs input[type="password"] {
   height: 30px;
 }
 
@@ -581,6 +658,10 @@ nav .user-profil .user-name-logout a {
   justify-content: space-between;
   align-items: center;
   height: 60px;
+}
+
+#admin-utilisateurs .admin-users-tableau .admin-users-table-header a {
+  text-decoration: none;
 }
 
 #admin-utilisateurs .admin-users-tableau .admin-users-table-header div {
@@ -614,23 +695,11 @@ nav .user-profil .user-name-logout a {
   padding: 10px;
 }
 
-#admin-utilisateurs .admin-users-tableau .admin-users-table-items table thead th:nth-of-type(1) {
-  width: 150px;
-}
-
-#admin-utilisateurs .admin-users-tableau .admin-users-table-items table thead th:nth-of-type(2) {
-  width: 100px;
-}
-
-#admin-utilisateurs .admin-users-tableau .admin-users-table-items table thead th:nth-of-type(3) {
-  width: 100px;
-}
-
-#admin-utilisateurs .admin-users-tableau .admin-users-table-items table thead th:nth-of-type(6) {
+#admin-utilisateurs .admin-users-tableau .admin-users-table-items table thead th:nth-of-type(5) {
   width: 80px;
 }
 
-#admin-utilisateurs .admin-users-tableau .admin-users-table-items table thead th:nth-of-type(7) {
+#admin-utilisateurs .admin-users-tableau .admin-users-table-items table thead th:nth-of-type(6) {
   width: 80px;
 }
 
