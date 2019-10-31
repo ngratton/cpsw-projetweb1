@@ -27,6 +27,10 @@ header {
   margin-bottom: 20px;
 }
 
+.bio-video iframe {
+  height: 700px;
+}
+
 /********************
 *
 *   MEDIA QUERIES
@@ -43,10 +47,22 @@ header {
   #bio .bio-liste-reconnaissances li {
     margin-bottom: 5px;
   }
+  .bio-video iframe {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bio-video iframe {
+    height: 400px;
+  }
 }
 
 @media screen and (max-width: 576px) {
   #bio .bio-liste-reconnaissances {
     padding: 0;
+  }
+  .bio-video iframe {
+    height: 300px;
   }
 }

@@ -10,8 +10,9 @@ export default class App {
 		/* POUR TOUTES LES PAGES */
 		var url = window.location.pathname;
 		var indexUrl = url.includes("index");
+		// var homeUrl = url.begins("projetweb/");
 		
-		if (url === "/" || indexUrl === true) {
+		if (url === "/" || indexUrl === true || url === "/projetweb" || url === "/projetweb/") {
 			document.querySelector("#nav-logo").parentNode.removeChild(document.querySelector("#nav-logo"));
 		} else {
 			document.querySelector("#nav-logo").addEventListener("click", e => {

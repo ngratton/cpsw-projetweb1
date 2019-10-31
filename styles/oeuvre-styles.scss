@@ -122,6 +122,11 @@ header {
     a {
         flex: 1;
         margin: 30px 15px;
+        height: 50px;
+
+        svg {
+            max-height: 40px;
+        }
     }
 }
 
@@ -242,7 +247,7 @@ header {
 
         audio {
             height: 40px;
-            width: 100px;
+            width: 250px;
             outline: none;
             // transition: all .2s ease-out;
         }

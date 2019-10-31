@@ -520,7 +520,8 @@ input {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
   background-color: #DCE2E8;
   border: 1px solid #DCE2E8;
   color: #262C2D;
@@ -532,7 +533,8 @@ input[type="password"] {
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="email"]:focus {
   border: 1px solid #7DBBC9;
 }
 

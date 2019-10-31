@@ -545,7 +545,8 @@ input {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
     background-color: $couleur-gris-pale;
     border: 1px solid $couleur-gris-pale;
     color: $couleur-gris-fonce;
