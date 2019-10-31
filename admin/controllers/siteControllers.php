@@ -30,27 +30,26 @@ function ajoutOeuvreSubmitCtlr() {
     $oeuvreDate = $_POST["oeuvre-date"];
     $oeuvreEtiquette = $_POST["oeuvre-etiquette"];
     $oeuvreTypeInt = intval($_POST["oeuvre-type"]);
-    $oeuvreDesc = $_POST["oeuvre-desc"];
-    // $oeuvreDesc = nl2br(htmlentities($oeuvreDescTxt, ENT_QUOTES, 'UTF-8'));
+    $oeuvreDesc = nl2br($_POST["oeuvre-desc"]);
     $lienBandcamp = $_POST["link-bandcamp"];
     $lienItunes = $_POST["link-itunes"];
     $lienAmazon = $_POST["link-amazon"];
     // Oeuvre -- Fichier
     $oeuvreCoverFile = $_FILES["oeuvre-cover"]["tmp_name"];
-    $destinationCover = "../img/musique/" .  basename($_FILES["oeuvre-cover"]["name"]);
-    move_uploaded_file($oeuvreCoverFile, $destinationCover);
+    $destinationCover = "./img/musique/" .  basename($_FILES["oeuvre-cover"]["name"]);
+    $destinationCoverAdmin = "." . $destinationCover;
+    move_uploaded_file($oeuvreCoverFile, $destinationCoverAdmin);
 
 
     // Appels des Functions avec paramètres
-    ajoutOeuvreModel($oeuvreTitre, $oeuvreDate, $oeuvreEtiquette, $oeuvreTypeInt, $destinationCover, $oeuvreDesc, $lienBandcamp, $lienItunes, $lienAmazon);
+    $resultat = ajoutOeuvreModel($oeuvreTitre, $oeuvreDate, $oeuvreEtiquette, $oeuvreTypeInt, $destinationCover, $oeuvreDesc, $lienBandcamp, $lienItunes, $lienAmazon);
     
     header("location:./ajout-pistes.php");
     exit();
 }
 
 function ajoutPistesCtlr() {
-    
-    $idStr = getOeuvresId();
+    $idStr = getOeuvresIdModel();
     $id = intval($idStr['id']);
 
     $oeuvre = getOeuvreModel($id);
@@ -58,20 +57,23 @@ function ajoutPistesCtlr() {
 }
 
 function ajoutPistesSubmitCtlr() {
-    $oeuvreId = intval($_POST["oeuvre-id"]);
-    //Pistes
+    $oeuvreIdInt = intval($_POST["oeuvre-id"]);
     $pisteNoInt_1 = intval($_POST["piste-no--1"]);
     $pisteTitre_1 = $_POST["piste-titre--1"];
     $pisteTemps_1 = $_POST["piste-temps-min--1"] . ":" . $_POST["piste-temps-sec--1"];
 
+    var_dump($pisteTemps_1);
+
     // Pistes Fichiers
     $audioPisteFile_1 = $_FILES["piste-audio--1"]["tmp_name"];
-    $audioPistePath_1 = "../media/audio/" .  basename($_FILES["piste-audio--1"]["name"]);
-    move_uploaded_file($pisteAudioFile_1, $destinationPiste_1);
+    $audioPistePath_1 = "./media/audio/" .  basename($_FILES["piste-audio--1"]["name"]);
+    $audioPistePathAdmin_1 = "." . $audioPistePath_1;
+    move_uploaded_file($audioPisteFile_1, $audioPistePathAdmin_1);
 
-    ajoutPistesModel($oeuvreId, $pisteNoInt_1, $pisteTitre_1, $pisteTemps_1, $audioPistePath_1);
+    ajoutPistesModel($oeuvreIdInt, $pisteNoInt_1, $pisteTitre_1, $pisteTemps_1, $audioPistePath_1);
     header("location:./index.php");
     exit();
+
 }
 
 
@@ -89,6 +91,34 @@ function modifierOeuvreCtlr() {
     $oeuvre = getOeuvreModifierModel($id);
     $pistes = getPistesModifierModel($id);
     include("./views/modifierOeuvreView.php");
+}
+
+function modifierOeuvreSubmitCtlr() {
+    $oeuvreIdInt = intval($_POST["oeuvre-id"]);
+    $oeuvreTitre = $_POST["oeuvre-titre"];
+    $oeuvreDate = $_POST["oeuvre-date"];
+    $oeuvreEtiquette = $_POST["oeuvre-etiquette"];
+    $oeuvreTypeInt = intval($_POST["oeuvre-type"]);
+    $oeuvreDesc = nl2br($_POST["oeuvre-desc"]);
+    $oeuvreLienBandcamp = $_POST["link-bandcamp"];
+    $oeuvreLienItunes = $_POST["link-itunes"];
+    $oeuvreLienAmazon = $_POST["link-amazon"];
+    
+    modifierOeuvreModel($oeuvreIdInt, $oeuvreTitre, $oeuvreDate, $oeuvreEtiquette, $oeuvreTypeInt, $oeuvreDesc, $oeuvreLienBandcamp, $oeuvreLienItunes, $oeuvreLienAmazon);
+    
+    header("location:./index.php");
+    exit();
+}
+
+function modifierPistesSubmitCtlr() {
+    $pisteId1 = intval($_POST["piste-id"]);
+    $pisteTitre1 = $_POST["piste-titre--1"];
+    $pisteTemps1 = $_POST["piste-temps-temps--1"];
+
+    modifierPistesModel($pisteId1, $pisteTitre1, $pisteTemps1);
+
+    header("location:index.php");
+    // exit();
 }
 
 function supprimerOeuvreCtlr() {
@@ -119,8 +149,9 @@ function ajoutSpectacleSubmitCtlr() {
     $showBillets = $_POST["spectacle-billets"];
 
     $showPosterFile = $_FILES["spectacle-img"]["tmp_name"];
-    $showPosterPath = "../img/shows/" .  basename($_FILES["spectacle-img"]["name"]);
-    move_uploaded_file($showPosterFile, $showPosterPath);
+    $showPosterPath = "./img/shows/" .  basename($_FILES["spectacle-img"]["name"]);
+    $showPosterPathAdmin = "." . $showPosterPath;
+    move_uploaded_file($showPosterFile, $showPosterPathAdmin);
 
     ajoutSpectacleModel($showTitre, $showDate, $showHeure, $showSalle, $showVille, $showBillets, $showPosterPath);
     header("location:./index.php");
@@ -149,8 +180,9 @@ function modifierSpectacleSubmitCtlr() {
     $showBillets = $_POST["spectacle-billets"];
     
     $showPosterFile = $_FILES["spectacle-img"]["tmp_name"];
-    $showPosterPath = "../img/shows/" .  basename($_FILES["spectacle-img"]["name"]);
-    move_uploaded_file($showPosterFile, $showPosterPath);
+    $showPosterPath = "./img/shows/" .  basename($_FILES["spectacle-img"]["name"]);
+    $showPosterPathAdmin = "." . $showPosterPath;
+    move_uploaded_file($showPosterFile, $showPosterPathAdmin);
 
     modifierSpectacleModel($showTitre, $showDate, $showHeure, $showSalle, $showVille, $showBillets, $showPosterPath, $showId);
     header("location:./index.php");

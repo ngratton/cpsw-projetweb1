@@ -45,7 +45,7 @@ if ($_SESSION["estConnecte"] != true) {
 
                                     <?php foreach($oeuvres AS $oeuvre) { ?>
                                         <div class="admin-accueil-table-item">
-                                            <img src="<?php echo $oeuvre['album_img_path']; ?>" alt="">
+                                            <img src=".<?php echo $oeuvre['album_img_path']; ?>" alt="">
                                             <div class="item-details">
                                                 <div class="item-details-infos">
                                                     <span class="item-type"><?php echo $oeuvre['type_nom']; ?></span>
@@ -95,7 +95,7 @@ if ($_SESSION["estConnecte"] != true) {
 
                                     <?php foreach($spectacles AS $spectacle) { ?>
                                         <div class="admin-accueil-table-item">
-                                            <img src="<?php echo $spectacle['show_photo_path']; ?>" alt="">
+                                            <img src=".<?php echo $spectacle['show_photo_path']; ?>" alt="">
                                             <div class="item-details">
                                                 <div class="item-details-infos">
                                                     <span class="item-type"><?php echo $spectacle['show_ville']; ?> - <?php echo $spectacle['show_salle']; ?></span>

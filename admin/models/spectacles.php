@@ -33,7 +33,7 @@ function getSpectaclesAdminModel() {
 
     $sql = "
         SELECT * FROM spectacles
-        ORDER BY show_date DESC
+        ORDER BY show_date ASC
         ";
     
     $resultats = mysqli_query($bdd, $sql);

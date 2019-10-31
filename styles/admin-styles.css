@@ -118,6 +118,7 @@ a > button {
 .btn-publish {
   background-color: #946F2B;
   color: white;
+  margin-left: 20px;
 }
 
 .btn-publish svg {
@@ -591,6 +592,10 @@ nav .user-profil .user-name-logout a {
 
 #admin-ajoutoeuvre .admin-ajoutoeuvre-tableau .oeuvre-piste .oeuvre-pistes-temps input[type="text"] {
   width: 50px;
+}
+
+#admin-ajoutoeuvre .admin-ajoutoeuvre-tableau .oeuvre-piste .oeuvre-pistes-temps .oeuvre-pistes-temps-modifier {
+  width: 125px;
 }
 
 #admin-ajoutoeuvre .admin-ajoutoeuvre-tableau .oeuvre-piste .oeuvre-pistes-fichier {

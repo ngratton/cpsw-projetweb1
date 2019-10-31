@@ -17,7 +17,7 @@ if ($_SESSION["estConnecte"] != true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ajouter une oeuvre | Administration | Gabriel Forion - compositeur</title>
+    <title>Modifier les pistes | Administration | Gabriel Forion - compositeur</title>
     <link rel="stylesheet" href="../styles/admin-styles.min.css">
 </head>
 <body>
@@ -25,12 +25,12 @@ if ($_SESSION["estConnecte"] != true) {
         <?php include("./views/admin-header.php"); ?>
         <main>
             <div class="container flex-centre">
-                <form action="./modifier-pistes-submit.php" method="post" name="ajout-oeuvre" enctype="multipart/form-data">
+                <form action="./modifier-pistes-submit.php" method="post" name="modifier-pistes">
                 <div class="admin-ajoutoeuvre-titre-btn">
-                    <h2>Ajouter les pistes à <?php echo $oeuvre['album_titres']; ?></h2>
+                    <h2>Modifier les pistes de <?php echo $oeuvre['album_titres']; ?></h2>
                     <button class="btn btn-publish" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9 10V8h2v2h2v2h-2v2H9v-2H7v-2h2zm-5 8h12V6h-4V2H4v16zm-2 1V0h12l4 4v16H2v-1z"/></svg>
-                        <span class="bold">PUBLIER</span>
+                        <span class="bold">ENREGISTRER LES MODIFICATIONS</span>
                     </button>
                     <input type="text" name="userIdInt" id="userIdInt" value="<?php echo $_SESSION["userId"]; ?>" hidden disabled>
                 </div>
@@ -59,19 +59,17 @@ if ($_SESSION["estConnecte"] != true) {
                                         </div>
                                     </div>
                                     <div class="admin-ajoutoeuvre-table-form">
-                                        <p class="notes">Un seul fichier audio est nécessaire, mais pas requis.</p>
                                         <div class="oeuvre-piste">
-                                            <span class="oeuvre-pistes-no">1</span>
-                                            <input type="text" name="piste-no--1" id="piste-no--1" value="1" hidden>
+                                            <span class="oeuvre-pistes-no"><?php echo $pistes['piste_no']; ?></span>
+                                            <input type="text" name="piste-id" id="piste-id" value="<?php echo $pistes['id']; ?>" hidden>
                                             <input class="oeuvre-pistes-titre" type="text" name="piste-titre--1" id="piste-titre--1" value="<?php echo $pistes['piste_titre']; ?>" >
                                             <span class="oeuvre-pistes-temps">
-                                                <input type="text" name="piste-temps-sec--1" id="piste-temps-sec--1" placeholder="sec" >
-                                                <input type="text" name="piste-temps-temps--1" id="piste-temps-min--1" placeholder="min" value="<?php echo $pistes['piste_temps']; ?>">
+                                                <input class="oeuvre-pistes-temps-modifier" type="text" name="piste-temps-temps--1" id="piste-temps-min--1" placeholder="min" value="<?php echo $pistes['piste_temps']; ?>">
                                             </span>
-                                            <!-- <input type="file" name="piste-audio--1" id="piste-audio--1"> -->
                                             <audio id="lecteur-audio" controls>
                                                 <source src="<?php echo $pistes['piste_audio_path']; ?>" type="audio/mpeg">
                                             </audio>
+                                            <span></span>
                                         </div>
                                     </div>
                                 </div>

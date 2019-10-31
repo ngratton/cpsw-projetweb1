@@ -8,6 +8,7 @@
         <div class="user-name-logout">
             <span><?php echo $_SESSION["userNom"];?></span>
             <a href="./deconnexion.php">Se déconnecter</a>
+            <a href="../">Retour au site publique</a>
         </div>
     </div>
 </nav>

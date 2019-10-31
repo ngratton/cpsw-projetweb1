@@ -53,9 +53,11 @@ function ajoutOeuvreModel($oeuvreTitre, $oeuvreDate, $oeuvreEtiquette, $oeuvreTy
     mysqli_stmt_execute($stmt);
 
     mysqli_close($bdd);
+
+    // return $stmt;
 }
 
-function ajoutPistesModel($oeuvreId, $pisteNoInt_1, $pisteTitre_1, $pisteTemps_1, $audioPistePath_1) {
+function ajoutPistesModel($oeuvreIdInt, $pisteNoInt_1, $pisteTitre_1, $pisteTemps_1, $audioPistePath_1) {
     global $bdd;
 
     $sql = "
@@ -74,16 +76,18 @@ function ajoutPistesModel($oeuvreId, $pisteNoInt_1, $pisteTitre_1, $pisteTemps_1
     mysqli_stmt_bind_param(
         $stmt, 
         'iisss',
-        $lastInserId,
+        $oeuvreIdInt,
         $pisteNoInt_1,
+        $pisteTitre_1,
         $pisteTemps_1,
-        $destinationPiste_1,
         $audioPistePath_1
     );
 
     mysqli_stmt_execute($stmt);
 
     mysqli_close($bdd);
+
+    // return $stmt;
 }
 
 function getPistesModifierModel($id) {
@@ -99,7 +103,7 @@ function getPistesModifierModel($id) {
     return $row;
 }
 
-function getOeuvresId() {
+function getOeuvresIdModel() {
     global $bdd;
 
     $sql = "SELECT MAX(id) as 'id', album_titres FROM oeuvres";
@@ -147,4 +151,48 @@ function supprimerOeuvreModel($id) {
     mysqli_query($bdd, $sql);
     
     mysqli_close($bdd);
+}
+
+function modifierPistesModel($pisteId1, $pisteTitre1, $pisteTemps1) {
+    global $bdd;
+
+    $sql = "
+        UPDATE pistes
+        SET 
+            piste_titre = ?, 
+            piste_temps = ?
+        WHERE id = ?
+        ";
+
+    $stmt = mysqli_prepare($bdd, $sql);
+    mysqli_stmt_bind_param($stmt, 'ssi', $pisteTitre1, $pisteTemps1, $pisteId1);
+    mysqli_stmt_execute($stmt);
+    
+    // mysqli_close($bdd);
+
+    // return $stmt;
+}
+
+function modifierOeuvreModel($oeuvreIdInt, $oeuvreTitre, $oeuvreDate, $oeuvreEtiquette, $oeuvreTypeInt, $oeuvreDesc, $oeuvreLienBandcamp, $oeuvreLienItunes, $oeuvreLienAmazon) {
+    global $bdd;
+
+    $sql = "
+        UPDATE oeuvres
+        SET 
+            album_titres = ?, 
+            album_dates = ?,
+            etiquette = ?,
+            fk_types_id = ?,
+            album_desc = ?,
+            bandcamp_link = ?,
+            itunes_link = ?,
+            amazon_link = ?
+        WHERE id = ?
+        ";
+
+    $stmt = mysqli_prepare($bdd, $sql);
+    mysqli_stmt_bind_param($stmt, 'sssissssi', $oeuvreTitre, $oeuvreDate, $oeuvreEtiquette, $oeuvreTypeInt, $oeuvreDesc, $oeuvreLienBandcamp, $oeuvreLienItunes, $oeuvreLienAmazon, $oeuvreIdInt);
+    mysqli_stmt_execute($stmt);
+    
+    // return $stmt;
 }

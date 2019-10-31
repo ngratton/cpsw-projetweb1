@@ -133,6 +133,7 @@ a > button {
 .btn-publish {
     background-color: $couleur-dore;
     color: white;
+    margin-left: 20px;
 
     svg {
         fill: white;
@@ -279,6 +280,7 @@ nav {
             }
         }
     }
+
 }
 
 // ############################
@@ -659,6 +661,10 @@ nav {
 
                 input[type="text"] {
                     width: 50px;
+                }
+
+                .oeuvre-pistes-temps-modifier {
+                    width: 125px;
                 }
             }
             .oeuvre-pistes-fichier { 

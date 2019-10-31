@@ -28,15 +28,15 @@ if ($_SESSION["estConnecte"] != true) {
                 <form action="./ajout-oeuvre-submit.php" method="post" name="ajout-oeuvre" enctype="multipart/form-data">
                 <div class="admin-ajoutoeuvre-titre-btn">
                     <h2>Ajouter une oeuvre</h2>
-                    <button class="btn btn-publish" type="submit">
-                        <span class="bold">PROCHAINE ÉTAPE ></span>
-                    </button>
                     <input type="text" name="userIdInt" id="userIdInt" value="<?php echo $_SESSION["userId"]; ?>" hidden disabled>
                 </div>
                     <div class="admin-ajoutoeuvre-etapes">
                         <div class="etapes-etape"><span>Étape 1 de 2</span> </div>
                         <div class="etapes-ajout actif"><span>Ajout de l'oeuvre</span></div>
                         <div class="etapes-ajout"><span>Ajout des pistes (audio)</span></div>
+                        <button class="btn btn-publish" type="submit">
+                            <span class="bold">PROCHAINE ÉTAPE ></span>
+                        </button>
                     </div>
                     <div class="carte" id="admin-ajoutoeuvre">
                         <div class="admin-ajoutoeuvre-tableau">
