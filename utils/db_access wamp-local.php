@@ -1,9 +1,9 @@
 <?php 
 
-$db_hostname = "mysql.julienduranleau.com";
-$db_username = "0270256";
-$db_password = "0270256";
-$db_database = "0270256_projweb1_gforion";
+$db_hostname = "localhost";
+$db_username = "ng";
+$db_password = "ngratton";
+$db_database = "projweb1_gforion";
 
 $bdd = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);
 

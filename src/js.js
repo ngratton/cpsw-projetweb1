@@ -10,9 +10,10 @@ export default class App {
 		/* POUR TOUTES LES PAGES */
 		var url = window.location.pathname;
 		var indexUrl = url.includes("index");
+		var urlJd = url.includes("/etudiants/0270256/projetweb/");
 		// var homeUrl = url.begins("projetweb/");
 		
-		if (url === "/" || indexUrl === true || url === "/projetweb" || url === "/projetweb/") {
+		if (url === "/" || indexUrl === true || url === "/projetweb" || url === "/projetweb/" || urlJd === true) {
 			document.querySelector("#nav-logo").parentNode.removeChild(document.querySelector("#nav-logo"));
 		} else {
 			document.querySelector("#nav-logo").addEventListener("click", e => {
