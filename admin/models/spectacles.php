@@ -70,7 +70,7 @@ function getSpectacleModel($id) {
     return $row;
 }
 
-function modifierSpectacleModel($showTitre, $showDate, $showHeure, $showSalle, $showVille, $showBillets, $showPosterPath, $showId) {
+function modifierSpectacleModel($showTitre, $showDate, $showHeure, $showSalle, $showVille, $showBillets, $showId) {
     global $bdd;
 
     $sql = "
@@ -81,14 +81,13 @@ function modifierSpectacleModel($showTitre, $showDate, $showHeure, $showSalle, $
             show_heure = ?,
             show_salle = ?,
             show_ville = ?,
-            show_lien_billets = ?,
-            show_photo_path = ?
+            show_lien_billets = ?
         WHERE id = ?
         ";
 
 
     $stmt = mysqli_prepare($bdd, $sql);
-    mysqli_stmt_bind_param($stmt, 'sssssssi', $showTitre, $showDate, $showHeure, $showSalle, $showVille, $showBillets, $showPosterPath, $showId);
+    mysqli_stmt_bind_param($stmt, 'ssssssi', $showTitre, $showDate, $showHeure, $showSalle, $showVille, $showBillets, $showId);
     mysqli_stmt_execute($stmt);
     
     mysqli_close($bdd);

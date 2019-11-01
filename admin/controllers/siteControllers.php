@@ -179,12 +179,7 @@ function modifierSpectacleSubmitCtlr() {
     $showVille = $_POST["spectacle-ville"];
     $showBillets = $_POST["spectacle-billets"];
     
-    $showPosterFile = $_FILES["spectacle-img"]["tmp_name"];
-    $showPosterPath = "./img/shows/" .  basename($_FILES["spectacle-img"]["name"]);
-    $showPosterPathAdmin = "." . $showPosterPath;
-    move_uploaded_file($showPosterFile, $showPosterPathAdmin);
-
-    modifierSpectacleModel($showTitre, $showDate, $showHeure, $showSalle, $showVille, $showBillets, $showPosterPath, $showId);
+    modifierSpectacleModel($showTitre, $showDate, $showHeure, $showSalle, $showVille, $showBillets, $showId);
     header("location:./index.php");
     exit();
 }

@@ -59,11 +59,7 @@ if ($_SESSION["estConnecte"] != true) {
                                             </label>
                                             <label for="spectacle-img">
                                                 <span>Image actuelle</span>
-                                                <img src="<?php echo $spectacle['show_photo_path']; ?>" height="150">
-                                            </label>
-                                            <label for="spectacle-img">
-                                                <span>Nouvelle image</span>
-                                                <input type="file" name="spectacle-img" id="spectacle-img">
+                                                <img src=".<?php echo $spectacle['show_photo_path']; ?>" height="150">
                                             </label>
                                         </div>
                                         <div class="flex-2x1 admin-ajoutoeuvre-details">
