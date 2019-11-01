@@ -34,7 +34,7 @@
                 <p>
                     Compositeur, mélodiste et arrangeur de musique inspiré, GABRIEL FORION partage sa vie entre la chanson et la musique de film depuis plusieurs années.
                 </p>
-                <a class="accueil-bio-lien" href="biographie.html">Lire plus ></a>
+                <a class="accueil-bio-lien" href="biographie.php">Lire plus ></a>
             </div>
         </section>
         <section id="accueil-avenir" class="conteneur">

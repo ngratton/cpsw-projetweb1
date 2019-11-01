@@ -40,7 +40,6 @@ function ajoutOeuvreSubmitCtlr() {
     $destinationCoverAdmin = "." . $destinationCover;
     move_uploaded_file($oeuvreCoverFile, $destinationCoverAdmin);
 
-
     // Appels des Functions avec paramètres
     $resultat = ajoutOeuvreModel($oeuvreTitre, $oeuvreDate, $oeuvreEtiquette, $oeuvreTypeInt, $destinationCover, $oeuvreDesc, $lienBandcamp, $lienItunes, $lienAmazon);
     

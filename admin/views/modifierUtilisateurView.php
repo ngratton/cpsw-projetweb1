@@ -2,7 +2,7 @@
 
 session_start();
 
-if ($_SESSION["estConnecte"] != true) {
+if ($_SESSION["estConnecte"] != true || $_SESSION["userName"] != "gforion") {
     echo "<span class='txt_rouge'>Accès refusé.</span>";
     // sleep(2);
     header("location:connexion.php");

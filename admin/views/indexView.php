@@ -54,7 +54,7 @@ if ($_SESSION["estConnecte"] != true) {
                                                 </div>
                                                 <div class="item-details-options">
                                                     <div class="svg-voir-page">
-                                                        <a href="<?php echo $oeuvre['id']; ?>">
+                                                        <a href="../oeuvre.php?id=<?php echo $oeuvre['id']; ?>" target="_blank">
                                                             <span>Voir la page en ligne</span>
                                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zM7.88 7.88l-3.54 7.78 7.78-3.54 3.54-7.78-7.78 3.54zM10 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
                                                         </a>
@@ -123,30 +123,32 @@ if ($_SESSION["estConnecte"] != true) {
                                 </div>
                             </div>
                         </div>
-                        <div class="flex-r-1quart">
-                            <div class="admin-accueil-tableau accueil-gestion-users">
-                                <div class="admin-accueil-table-header">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 5a5 5 0 0 1 10 0v2A5 5 0 0 1 5 7V5zM0 16.68A19.9 19.9 0 0 1 10 14c3.64 0 7.06.97 10 2.68V20H0v-3.32z"/></svg>
-                                        <h3>Gestion des utilisateurs</h3>
+                        <?php if($_SESSION["userName"] === "gforion") { ?>
+                            <div class="flex-r-1quart">
+                                <div class="admin-accueil-tableau accueil-gestion-users">
+                                    <div class="admin-accueil-table-header">
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 5a5 5 0 0 1 10 0v2A5 5 0 0 1 5 7V5zM0 16.68A19.9 19.9 0 0 1 10 14c3.64 0 7.06.97 10 2.68V20H0v-3.32z"/></svg>
+                                            <h3>Gestion des utilisateurs</h3>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="admin-accueil-users">
-                                    <div>
-                                        <a href="liste-utilisateurs.php">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M7 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1c2.15 0 4.2.4 6.1 1.09L12 16h-1.25L10 20H4l-.75-4H2L.9 10.09A17.93 17.93 0 0 1 7 9zm8.31.17c1.32.18 2.59.48 3.8.92L18 16h-1.25L16 20h-3.96l.37-2h1.25l1.65-8.83zM13 0a4 4 0 1 1-1.33 7.76 5.96 5.96 0 0 0 0-7.52C12.1.1 12.53 0 13 0z"/></svg>
-                                            <span>Liste des utilisateurs</span>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a href="ajout-utilisateur.php">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2 6H0v2h2v2h2V8h2V6H4V4H2v2zm7 0a3 3 0 0 1 6 0v2a3 3 0 0 1-6 0V6zm11 9.14A15.93 15.93 0 0 0 12 13c-2.91 0-5.65.78-8 2.14V18h16v-2.86z"/></svg>
-                                            <span>Ajouter un utlisateur</span>
-                                        </a>
+                                    <div class="admin-accueil-users">
+                                        <div>
+                                            <a href="liste-utilisateurs.php">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M7 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1c2.15 0 4.2.4 6.1 1.09L12 16h-1.25L10 20H4l-.75-4H2L.9 10.09A17.93 17.93 0 0 1 7 9zm8.31.17c1.32.18 2.59.48 3.8.92L18 16h-1.25L16 20h-3.96l.37-2h1.25l1.65-8.83zM13 0a4 4 0 1 1-1.33 7.76 5.96 5.96 0 0 0 0-7.52C12.1.1 12.53 0 13 0z"/></svg>
+                                                <span>Liste des utilisateurs</span>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="ajout-utilisateur.php">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2 6H0v2h2v2h2V8h2V6H4V4H2v2zm7 0a3 3 0 0 1 6 0v2a3 3 0 0 1-6 0V6zm11 9.14A15.93 15.93 0 0 0 12 13c-2.91 0-5.65.78-8 2.14V18h16v-2.86z"/></svg>
+                                                <span>Ajouter un utlisateur</span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

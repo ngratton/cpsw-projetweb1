@@ -46,7 +46,7 @@ if ($_SESSION["estConnecte"] != true) {
                                     </div>
                                     <div class="admin-ajoutoeuvre-resume">
                                         <span><?php echo $oeuvre['album_titres']; ?></span>
-                                        <img src="<?php echo $oeuvre['album_img_path']; ?>" alt="">
+                                        <img src=".<?php echo $oeuvre['album_img_path']; ?>" alt="">
                                     </div>
                                 </div>
                             </div>
