@@ -15,7 +15,7 @@ Création de tout l'aspect visuel (front-end) depuis la maquette produite.
 - JavaScript (très peu)
 
 ## Dynamisation
-Développer une interface d'administration de type CMS pour permettre l'ajout d'oeuvres et la promotion de spectacles.
+Développer une interface d'administration de type CMS pour permettre l'ajout d'oeuvres et la promotion de spectacles. La dynamisation devait se faire selon une structure MVC.
 
 - PHP
 - MySQL
