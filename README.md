@@ -7,14 +7,14 @@ Produire en 3 semaines, sous forme de 3 sprints, le design, l'intégration et la
 ### Design
 Le faux-client a fourni quelques éléments: chansons, images d'oeuvres, descriptionx et logo. À partir de ces éléments, produire une maquette que sera soumise pour approbation.
 
-### Inégration
+### Intégration (Front-end)
 Création de tout l'aspect visuel (front-end) depuis la maquette produite.
 
 - HTML
 - CSS
 - JavaScript (très peu)
 
-### Dynamisation
+### Dynamisation (Back-end)
 Développer une interface d'administration de type CMS pour permettre l'ajout d'oeuvres et la promotion de spectacles. La dynamisation devait se faire selon une structure MVC.
 
 - PHP
