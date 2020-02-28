@@ -1,8 +1,8 @@
 <?php 
 
 $db_hostname = "localhost";
-$db_username = "ng";
-$db_password = "ngratton";
+$db_username = "root";
+$db_password = "";
 $db_database = "projweb1_gforion";
 
 $bdd = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);

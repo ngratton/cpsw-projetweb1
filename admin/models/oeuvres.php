@@ -106,7 +106,7 @@ function getPistesModifierModel($id) {
 function getOeuvresIdModel() {
     global $bdd;
 
-    $sql = "SELECT MAX(id) as 'id', album_titres FROM oeuvres";
+    $sql = "SELECT MAX(id) as 'id' FROM oeuvres";
         
     $resultats = mysqli_query($bdd, $sql);
     $row = mysqli_fetch_assoc($resultats);
