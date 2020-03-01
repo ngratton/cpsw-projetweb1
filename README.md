@@ -5,7 +5,7 @@ Site produit dans le cadre d'un cours de 3 semaines intensives : design, front-e
 Produire en 3 semaines, sous forme de 3 sprints, le design, l'intégration et la dynamisation d'un site pour un faux artiste classique.
 
 ### Design
-Le faux-client a fourni quelques éléments: chansons, images d'oeuvres, descriptionx et logo. À partir de ces éléments, produire une maquette que sera soumise pour approbation.
+Le faux-client a fourni quelques éléments: chansons, images d'oeuvres, descriptions et logo. À partir de ces éléments, produire une maquette que sera soumise pour approbation.
 
 ### Intégration (Front-end)
 Création de tout l'aspect visuel (front-end) depuis la maquette produite.
